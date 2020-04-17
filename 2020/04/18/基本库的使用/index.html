@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="基本库的使用, Hexo">
+    <meta name="description" content="能渡苦厄何不渡我。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>基本库的使用 | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            能渡苦厄何不渡我。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://hpb1-boke.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://hpb1-boke.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/fm/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">基本库的使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">基本库的使用</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python3-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" class="post-category">
+                                python3 网络爬虫开发实战
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-04-18
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    47 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="学习爬虫"><a href="#学习爬虫" class="headerlink" title="学习爬虫"></a>学习爬虫</h2><p>学习爬虫最初的操作就是模拟浏览器向服务器发出请求，python的提供了功能齐全的类库来帮助我们完成这些请求。<code>最基础的HTTP库有urlib、httplib2、requests、treq</code>等。</p>
+<h2 id="3-1使用urlib"><a href="#3-1使用urlib" class="headerlink" title="3.1使用urlib"></a>3.1使用urlib</h2><p>在<code>python2</code>中，有<code>urllib</code>和<code>urllib2</code>两个库来实现请求的发送。而在<code>python3</code>,已经不存在<code>urllib2</code>这个库了，统一使用<code>urllib</code>。它是<code>pyhon</code>内置的<code>http</code>请求库，包含了如下4个模块。</p>
+<p>requests:  <strong>它是最基本的http请求模块，可以用来模拟请求，就像在浏览器里输入网址然后回车一样，只需要给库方法传入url以及而外的参数就可以模拟这个过程。</strong></p>
+<p>error：<strong>异常处理模块，如果这个请求错误，我们就可以捕获这些异常，然后进行重试或其他操作以保证不会意外终止。</strong></p>
+<p>parse：<strong>一个工具模块，提供了很多url处理方法，比如拆分、解析、合并等。</strong></p>
+<p>robotparser: <strong>主要是用来识别网站的robots.txt文件，然后判断哪些网站可以爬，哪些网站不可以爬，它其实使用较少。</strong></p>
+<p><strong>发送请求</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlopen: **发送请求**</span><br><span class="line"></span><br><span class="line">urllib.request: **打开和浏览url中内容** </span><br><span class="line"></span><br><span class="line">read() : 返回网页的内容</span><br></pre></td></tr></table></figure>
+
+<p><code>decode()</code> :方法以 <code>encoding</code> 指定的编码格式解码字符串。默认编码为字符串编码。<br>下面我们以python官网为例子，我们来把网页抓下来,得到源代码之后呢？我们想要的链接、图片地址、文本信息不就都可以提取出来了吗？<br><strong>代码如下：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">respone = urllib.request.urlopen(<span class="string">'https://www.python.org'</span>)</span><br><span class="line"><span class="keyword">print</span>(respone.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200415091601828.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="type-方法输出响应的类型"><a href="#type-方法输出响应的类型" class="headerlink" title="type()方法输出响应的类型"></a>type()方法输出响应的类型</h2><p>type() :<strong>如果你只有第一个参数则返回对象的类型，三个参数返回新的类型对象。</strong></p>
+<p>从输出结果上得知，它是一个<code>HTTPResponse</code>类型对象，主要包含<code>read()、readinto()、getheader(name)、getheaders()、fileno()</code>等方法，以及<code>msg、version、status、reason、debuglevel、closed</code>等属性。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200415092307226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">得到这个对象后，我们把它赋值为<code>response变量</code>，然后就可以调用这些方法和属性，得到返回的一系列信息了。</p>
+<p>例如调用<code>read()方法</code>可以得到返回的网页内容，调用<code>seatus属性</code>可以得到返回结果的状态码，<code>如200代表着请求成功，404代表着网页未找到。</code><br>可见，前两个输出分别输出了响应的状态码和响应的头信息，最后一个输出通过调用<code>getheader()方法</code>并传递一个参数<code>server获取了响应头中的server的值</code>，结果是nginx，说明服务器是用nginx搭建的。<br><strong>代码如下：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">response = urllib.request.urlopen(<span class="string">'https://www.python.org'</span>)</span><br><span class="line"><span class="keyword">print</span>(response.status)</span><br><span class="line"><span class="keyword">print</span>(response.getheaders())</span><br><span class="line"><span class="keyword">print</span>(response.getheader(<span class="string">'Server'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/2020041509391886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">上述的例子是通过请求python的<code>get请求</code>获得python，下面使用urllib的<code>post请求</code></p>
+<h2 id="data参数"><a href="#data参数" class="headerlink" title="data参数"></a>data参数</h2><p>data参数是可选的。如果要添加该参数，需要使用bytes()方法将参数转化为字节流编码格式的内容，即<code>bytes</code>类型。另外如果传递了这个参数，则它的请求方式就不再是<code>GET</code>方式，而是<code>POST</code>方式。<br><strong>代码如下：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">data = bytes(urllib.parse.urlencode(&#123;<span class="string">'word'</span>:<span class="string">'a'</span>&#125;),encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,data=data)</span><br><span class="line"><span class="keyword">print</span>(response.read())</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200415103600406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里我们传递了一个参数<code>word</code>,值是<code>a</code>。他需要被转码为<code>bytes（字节流）</code>类型。其中转字节流采用了<code>bytes()</code>方法，该方法的第一个参数需要时<code>str(字符串)</code>类型，需要用<code>urllib.parse</code>模块里的<code>urlencode()</code>方法来将参数字典转化为字符串；第二个参数指定编码格式，这里指定<code>utf-8</code>。<br>这里请求的站点是httpbin.org。它可以输出请求的一些信息，其中包含我们传递的<code>data</code>参数。<br>结果如下：<br>       我们传递的参数出现了from字段，这表明模拟了表单提交的方式，以post方式传输数据。<br><img src="https://img-blog.csdnimg.cn/20200415103532688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="timeout参数"><a href="#timeout参数" class="headerlink" title="timeout参数"></a>timeout参数</h2><p><code>timeout</code>参数用于设置超时时间，单位为秒，意思就是如果请求超过了设置的这个时间，还没有得到响应就会抛出异常。如果不指定该参数，就会得到全局默认时间。它支持<code>http、https、ftp</code>请求。<br>这里我们设置超过时间0.1秒过后，服务器依然没有响应，于是抛出了URLError异常。该异常属于<code>urllib.error</code>模块，错误原因是超时。<br>代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">response=urllib.request.urlopen(<span class="string">'http://httpbin.org/get'</span>,timeout=<span class="number">0.1</span>)</span><br><span class="line"><span class="keyword">print</span>(response.read())</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200415125824660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">因此，可以通过设置这个超时时间来控制一个网页在长时间未响应，来跳过它的抓取。这可以利用<code>try except</code>语句来实现。代码如下:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import socket</span><br><span class="line">import urllib.request</span><br><span class="line">import urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">'http://httpbin.org/get'</span>,timeout=<span class="number">0.1</span>)</span><br><span class="line">except urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> isinstance(e.reason,socket.timeout):</span><br><span class="line">        <span class="keyword">print</span>(<span class="string">'TIME OUT'</span>)</span><br></pre></td></tr></table></figure>
+<p>这里我们请求了<code>http://httpbin.org/get</code>测试链接，设置超时时间是0.1秒，然后捕获了<code>URLError</code>异常，接着判断是<code>soket.timeout</code>类型（意思就是超时异常），从而得出它确实是因为超时而报错，打印输出了<code>TIME OUT。</code><br>按照常理来说，<code>0.1</code>秒内基本不可能得到服务器响应，因此输出<code>TIME OUT</code>提示，通过设置timeout这个参数来实现超时处理，有时还是挺有用的。<br><img src="https://img-blog.csdnimg.cn/20200415130531781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="request参数"><a href="#request参数" class="headerlink" title="request参数"></a>request参数</h2><p>我们知道利用<code>urlopen</code>方法可以实现最基本请求发起，但这几个简单的参数并不足以构建一个完整的请求。如果请求中需要加入Headers等信息，就可以利用更强大的<code>Request</code>类来构建。<br>首先，我们用实例来感受一下<code>request</code>的用法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">request=urllib.request.Request(<span class="string">'https://python.org'</span>)</span><br><span class="line">response = urllib.request.urlopen(request)</span><br><span class="line"><span class="keyword">print</span>(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<p>可以发现，我们依然是用<code>urlopen()</code>方法来发送这个请求，只不过这次该方法的参数不再是<code>URL</code>，而是一个<code>Request</code>类型的对象。通过构造这个数据结构，一方面我们可以将请求独立成一个对象，另一方面可更加丰富和灵活地配置参数。<br>下面我们看一下<code>Request</code>可以通过怎样的参数来构造，它的构造方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">urllib</span>.<span class="title">request</span>.<span class="title">Request</span><span class="params">(url, data=none, headers=&#123;&#125;, origin_req_host=none,unverifiable=False,method=none)</span></span></span><br></pre></td></tr></table></figure>
+<p>第一个参数url用于请求<code>URL</code>，这是必传参数，其他都是可选参数。</p>
+<p>如果要传第二个参数<code>data</code>，必须传<code>bytes（字节流）类型</code>的。如果它是字典，可以先用<code>urllib.parse</code>模块里的<code>urlencode()</code>编码</p>
+<p>第三个参数<code>headers</code>是一个字典，它就是请求头，我们可以在构造请求时通过<code>headers</code>参数直接构造，也可以通过调用请求实例的<code>add_header()</code>方法添加。</p>
+<p>添加请求头最常用的用法就是通过修改<code>User-Agent</code>来伪装浏览器，默认的<code>User-Agent</code>是<code>Python-urllib</code>,我们可以通过修改它来伪装浏览器。比如要伪装火狐浏览器，你可以把它设置为敌：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/<span class="number">5.0</span>(x11;U;Linux i686) Gecko/<span class="number">20071127</span> Firefox/<span class="number">2.0</span><span class="number">.0</span><span class="number">.11</span></span><br></pre></td></tr></table></figure>
+<p>第四个参数origin_req_host指的是请求方的<code>host名称</code>或者<code>ip地址</code>。</p>
+<p>第五个参数<code>unverifiable</code>表示这个请求是否是无法验证的，默认是<code>Falese</code>，意思就是说用户没有足够权限来选择接收这个请求结果。例如，我们请求一个<code>HTML文档</code>中的图片，但是我们没有自动抓取图像的权限，这时<code>unverifiable</code>的值是<code>true</code>。</p>
+<p>下面我们传入多个参数来构建请求来看一下，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line"></span><br><span class="line">url=<span class="string">'http://httpbin.org/post'</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla(compatible;MSIE;Windows NT)'</span>,</span><br><span class="line">   <span class="string">'Host'</span>:<span class="string">'httpbin.org'</span></span><br><span class="line">&#125;</span><br><span class="line">dict=&#123;</span><br><span class="line">  <span class="string">'name'</span> : <span class="string">'Germey'</span></span><br><span class="line">&#125;</span><br><span class="line">data = bytes(parse.urlencode(dict),encoding=<span class="string">'utf8'</span>)</span><br><span class="line">req= request.Request(url=url,data=data,headers=headers,method=<span class="string">'POST'</span>)</span><br><span class="line">response = request.urlopen(req)</span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200415153035684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)这里我们通过4个参数构造了一个请求，其中<code>url</code>即请求<code>URL</code>，<code>headers</code>中指定了<code>User-Agent</code>和<code>Host</code>,参数<code>data</code>用<code>urlencode()</code>和<code>bytes()</code>方法转成字节流。另外，指定了请求方式为<code>POST</code>。运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20200415153058721.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">观察结果可以发现，我们成功设置了<code>data</code>、<code>headers</code>和<code>method</code>。</p>
+<p>另外，headers也可以用<code>add_header()</code>方法来添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">req = request.Request(url=url,data=data,method=<span class="string">'POST'</span>)</span><br><span class="line">req.add_header(<span class="string">'User-Agent'</span>, <span class="string">'Mozilla/4.0 (compatible; MSIE 5.5;Windows NT)'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如此一来，我们就可以更加方便地构造请求，实现请求的发送啦。</p>
+<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>在上面的过程中，我们可以构造请求，但是对于一些更高级的操作（比如<code>Cookies处理、代理设置</code>等），我们该怎么办呢？<br>接下来，将需要更强大的工具Handler登场了，简而言之，我们可以把它理解为各种处理器，有专门处理登录验证的，有处理<code>Cookies</code>的，有处理设置代理的。利用他们，我们几乎可以做到<code>HTTP</code>请求中的所有事情。<br>首先介绍一下urllib.request模块里的BaseHandler类，它是所有其他Handler的父类，它提供了最基本的方法，例如<code>default_open()</code>、<code>protocol_request()</code>等。</p>
+<p>接下来，就有各种<code>Handler</code>子类继承这个<code>BaseHandler</code>类，举例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">HTTPDefaultErrorHandler:  用于处理HTTP响应错误，错误都会跑出HTTPError类型的异常。</span><br><span class="line"></span><br><span class="line">HTTPRedirectHandle：        用于处理重定向。</span><br><span class="line"></span><br><span class="line">HTTPCookieProcessor：     用于处理Cookies。</span><br><span class="line"></span><br><span class="line">ProxyHandler:             用于设置代理，默认代理为空。</span><br><span class="line"></span><br><span class="line">HTTPPasswordMgr:          用于管理密码，它维护了用户名和密码的表。</span><br><span class="line"></span><br><span class="line">HTTPBasicAuthHandler:    用于管理认证，如果一个链接打开时需要认证，那么可以用它来解决认证问题</span><br></pre></td></tr></table></figure>
+<p>关于怎么使用他们，后面会有实例演示。</p>
+<p>另一个比较重要的类就是OpenerDirector,我们可以称为Opener。我们之前用过urlopen()这个方法，实际上它就是urllib为我们提供的一个Opener。</p>
+<p>那么为什么要引入Opener呢？因为需要实现更高级的功能。之前使用的Request和urlopen()相当于类库为你封装好了极其常用的请求方法，利用它们完成基本的请求，但是现在不一样了，我们需要实现更高级的功能，所以需要深入一层进行配置，使用更底层的实例来完成操作，所以这里就用到了Opener。</p>
+<p>Opener可以使用open()方法，返回的类型和urlopen()如出一辙。那么，它和Handler有什么关系呢？简而言之，就是利用Handler来构建Opener。</p>
+<p>下面用几个实例来看看他们的用法。</p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a><strong>验证</strong></h2><p>有些网站在打开时就会弹出提示框，直接提示你输入用户名和密码，验证成功后才能查看页面，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200415164235473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>那么，如果要请求这样的页面，该怎么办呢？借助<code>HTTPBasicAuthHandler</code>就可以完成，相关代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> HTTPPasswordMgrWithDefaultRealm,HTTPBasicAuthHandler,build_opener</span><br><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line"></span><br><span class="line">username=<span class="string">'username'</span></span><br><span class="line">password=<span class="string">'password'</span></span><br><span class="line">url=<span class="string">'http://127.0.0.1:8806/'</span></span><br><span class="line"></span><br><span class="line">p=HTTPPasswordMgrWithDefaultRealm()</span><br><span class="line">p.add_password(<span class="literal">None</span>,url,username,password)</span><br><span class="line">auth_handler = HTTPBasicAuthHandler(p)</span><br><span class="line">opener = build_opener(auth_handler)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    result = opener.open(url)</span><br><span class="line">    html=result.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    print(html)</span><br><span class="line"><span class="keyword">except</span> URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200415165459772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)这里首先实例化<code>HTTPBasicAuthHandler</code>对象，其参数是<code>HTTPPasswordMgrWithDefaultRealm</code>对象，它利用了<code>add_password()</code>添加进行的用户名和密码，就这样建立了一个处理验证的<code>Handler</code>。<br>接下来，利用这个<code>Handler</code>并使用<code>build_opener()</code>方法构建一个<code>Opener</code>,这个<code>Opener</code>在发送请求时就相当于已经验证成功了。</p>
+<p>接下来，利用<code>Opener的open()</code>方法打开链接，就可以完成验证了。这里获取到的结果就是验证后的页面源码内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br></pre></td><td class="code"><pre><span class="line">G:\pythonp\python.exe C:/Users/<span class="number">74292</span>/PycharmProjects/untitled7/爬取页面源码.py</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"utf-8"</span> /&gt;</span><br><span class="line">		&lt;title&gt;个人中心登录&lt;/title&gt;</span><br><span class="line">		&lt;link rel=<span class="string">"shortcut icon"</span> href=<span class="string">"favicon.ico?v=2"</span> type=<span class="string">"image/x-icon"</span> /&gt;</span><br><span class="line">		&lt;script src="js/jquery-2.2.4.min.js"&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			$(document).ready(function() &#123;</span><br><span class="line">				</span><br><span class="line">				$(<span class="string">".form"</span>).slideDown(<span class="number">500</span>);</span><br><span class="line">				</span><br><span class="line">				$(<span class="string">"#landing"</span>).addClass(<span class="string">"border-btn"</span>);</span><br><span class="line"></span><br><span class="line">				$(<span class="string">"#registered"</span>).click(function() &#123;</span><br><span class="line">					$(<span class="string">"#landing"</span>).removeClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					$(<span class="string">"#landing-content"</span>).hide(<span class="number">500</span>);</span><br><span class="line">					$(this).addClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					$(<span class="string">"#registered-content"</span>).show(<span class="number">500</span>);</span><br><span class="line">					</span><br><span class="line">				&#125;)</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				$(<span class="string">"#registeredtxt"</span>).click(function() &#123;</span><br><span class="line">					$(<span class="string">"#landing"</span>).removeClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					$(<span class="string">"#landing-content"</span>).hide(<span class="number">500</span>);</span><br><span class="line">					$(this).addClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					$(<span class="string">"#registered-content"</span>).show(<span class="number">500</span>);</span><br><span class="line">					</span><br><span class="line">				&#125;)</span><br><span class="line">				</span><br><span class="line">				$(<span class="string">"#landing"</span>).click(function() &#123;</span><br><span class="line">					$(<span class="string">"#registered"</span>).removeClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					$(this).addClass(<span class="string">"border-btn"</span>);</span><br><span class="line">					</span><br><span class="line">					$(<span class="string">"#landing-content"</span>).show(<span class="number">500</span>);</span><br><span class="line">					$(<span class="string">"#registered-content"</span>).hide(<span class="number">500</span>);</span><br><span class="line">				&#125;)</span><br><span class="line">				</span><br><span class="line">				$(<span class="string">'#submitBut'</span>).click(function()&#123;</span><br><span class="line">				$(<span class="string">'#team_form'</span>).submit();</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			* &#123;</span><br><span class="line">				margin: <span class="number">0</span>;</span><br><span class="line">				padding: <span class="number">0</span>;</span><br><span class="line">				font-family: <span class="string">"微软雅黑"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			body &#123;</span><br><span class="line">				background: <span class="comment">#F7F7F7;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.form &#123;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: <span class="number">50</span>%;</span><br><span class="line">				left: <span class="number">50</span>%;</span><br><span class="line">				margin-left: <span class="number">-185</span>px;</span><br><span class="line">				margin-top: <span class="number">-210</span>px;</span><br><span class="line">				height: <span class="number">420</span>px;</span><br><span class="line">				width: <span class="number">340</span>px;</span><br><span class="line">				font-size: <span class="number">18</span>px;</span><br><span class="line">				-webkit-box-shadow: <span class="number">0</span>px <span class="number">0</span>px <span class="number">10</span>px <span class="comment">#A6A6A6;</span></span><br><span class="line">				background: <span class="comment">#fff;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.border-btn &#123;</span><br><span class="line">				border-bottom: <span class="number">1</span>px solid <span class="comment">#ccc;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#landing,</span></span><br><span class="line">			<span class="comment">#registered &#123;</span></span><br><span class="line">				float: left;</span><br><span class="line">				text-align: center;</span><br><span class="line">				width: <span class="number">170</span>px;</span><br><span class="line">				padding: <span class="number">15</span>px <span class="number">0</span>;</span><br><span class="line">				color: <span class="comment">#545454;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#landing-content &#123;</span></span><br><span class="line">				clear: both;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.inp &#123;</span><br><span class="line">				height: <span class="number">30</span>px;</span><br><span class="line">				margin: <span class="number">0</span> auto;</span><br><span class="line">				margin-bottom: <span class="number">30</span>px;</span><br><span class="line">				width: <span class="number">200</span>px;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.inp&gt;input &#123;</span><br><span class="line">				text-align: center;</span><br><span class="line">				height: <span class="number">30</span>px;</span><br><span class="line">				width: <span class="number">200</span>px;</span><br><span class="line">				margin: <span class="number">0</span> auto;</span><br><span class="line">				transition: all <span class="number">0.3</span>s ease-<span class="keyword">in</span>-out;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.login &#123;</span><br><span class="line">				border: <span class="number">1</span>px solid <span class="comment">#A6A6A6;</span></span><br><span class="line">				color: <span class="comment">#a6a6a6;</span></span><br><span class="line">				height: <span class="number">30</span>px;</span><br><span class="line">				width: <span class="number">202</span>px;</span><br><span class="line">				text-align: center;</span><br><span class="line">				font-size: <span class="number">13.333333</span>px;</span><br><span class="line">				margin-left: <span class="number">70</span>px;</span><br><span class="line">				line-height: <span class="number">30</span>px;</span><br><span class="line">				margin-top: <span class="number">30</span>px;</span><br><span class="line">				transition: all <span class="number">0.3</span>s ease-<span class="keyword">in</span>-out;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.login:hover &#123;</span><br><span class="line">				background: <span class="comment">#A6A6A6;</span></span><br><span class="line">				color: <span class="comment">#fff;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#bottom &#123;</span></span><br><span class="line">				margin-top: <span class="number">30</span>px;</span><br><span class="line">				font-size: <span class="number">13.333333</span>px;</span><br><span class="line">				color: <span class="comment">#a6a6a6;</span></span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#registeredtxt &#123;</span></span><br><span class="line">				float: left;</span><br><span class="line">				margin-left: <span class="number">80</span>px;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#forgotpassword &#123;</span></span><br><span class="line">				float: right;</span><br><span class="line">				margin-right: <span class="number">80</span>px;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#photo &#123;</span></span><br><span class="line">				border-radius: <span class="number">80</span>px;</span><br><span class="line">				border: <span class="number">1</span>px solid <span class="comment">#ccc;</span></span><br><span class="line">				height: <span class="number">80</span>px;</span><br><span class="line">				width: <span class="number">80</span>px;</span><br><span class="line">				margin: <span class="number">0</span> auto;</span><br><span class="line">				overflow: hidden;</span><br><span class="line">				clear: both;</span><br><span class="line">				margin-top: <span class="number">30</span>px;</span><br><span class="line">				margin-bottom: <span class="number">30</span>px;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#photo&gt;img:hover &#123;</span></span><br><span class="line">				-webkit-transform: rotateZ(<span class="number">360</span>deg);</span><br><span class="line">				-moz-transform: rotateZ(<span class="number">360</span>deg);</span><br><span class="line">				-o-transform: rotateZ(<span class="number">360</span>deg);</span><br><span class="line">				-ms-transform: rotateZ(<span class="number">360</span>deg);</span><br><span class="line">				transform: rotateZ(<span class="number">360</span>deg);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#photo&gt;img &#123;</span></span><br><span class="line">				height: <span class="number">80</span>px;</span><br><span class="line">				width: <span class="number">80</span>px;</span><br><span class="line">				-webkit-background-size: <span class="number">220</span>px <span class="number">220</span>px;</span><br><span class="line">				border-radius: <span class="number">60</span>px;</span><br><span class="line">				-webkit-transition: -webkit-transform <span class="number">1</span>s linear;</span><br><span class="line">				-moz-transition: -moz-transform <span class="number">1</span>s linear;</span><br><span class="line">				-o-transition: -o-transform <span class="number">1</span>s linear;</span><br><span class="line">				-ms-transition: -ms-transform <span class="number">1</span>s linear;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="comment">#registered-content &#123;</span></span><br><span class="line">				margin-top: <span class="number">40</span>px;</span><br><span class="line">				display: none;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.fix &#123;</span><br><span class="line">				clear: both;</span><br><span class="line">			&#125;</span><br><span class="line">			.form&#123;</span><br><span class="line">				display: none;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="form"&gt;</span><br><span class="line">			&lt;div id="landing"&gt;登录&lt;/div&gt;</span><br><span class="line">			&lt;div id="registered"&gt;注册&lt;/div&gt;</span><br><span class="line">			&lt;div class="fix"&gt;&lt;/div&gt;</span><br><span class="line">			&lt;div id=<span class="string">"landing-content"</span>&gt;</span><br><span class="line">			&lt;form action=<span class="string">"login.php"</span> method=<span class="string">"post"</span> id=<span class="string">"team_form"</span>&gt;</span><br><span class="line">				&lt;div id="photo"&gt;&lt;img src="img/photo.jpg" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="text" name="username" id="username" placeholder="用户名" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="password" name="pwd" id="pwd" placeholder="密码" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="login" id="submitBut"&gt; 登录&lt;/div&gt;</span><br><span class="line">				&lt;!-- &lt;input type="submit" id="aaa" value="登录" style="display:none;"/&gt; --&gt;</span><br><span class="line">				&lt;div id="bottom"&gt;&lt;span id="registeredtxt"&gt;立即注册&lt;/span&gt;&lt;span id="forgotpassword"&gt;忘记密码&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">			&lt;/form&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div id=<span class="string">"registered-content"</span>&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="text" placeholder="请输入用户名" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="password" placeholder="请输入密码" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="password" placeholder="请再次输入密码" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="inp"&gt;&lt;input type="text" placeholder="电子邮箱" /&gt;&lt;/div&gt;</span><br><span class="line">				&lt;div class="login"&gt;立即注册&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="代理设置方法"><a href="#代理设置方法" class="headerlink" title="代理设置方法"></a>代理设置方法</h2><p>在做爬虫的时候，免不了要是用代理，如果要添加代理，可以这样做，<br>这里我们本地搭建了个代理，它运行在了<code>808</code>端口上。<br><img src="https://img-blog.csdnimg.cn/20200415204106830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> ProxyHandler, build_opener</span><br><span class="line">proxy = <span class="string">'127.0.0.1:808'</span></span><br><span class="line">  <span class="comment">##参数是字典，键名是协议类型，健值是代理</span></span><br><span class="line">proxy_handler = ProxyHandler(&#123;</span><br><span class="line">    <span class="string">'http'</span>: <span class="string">'http://'</span> + proxy,</span><br><span class="line">    <span class="string">'https'</span>: <span class="string">'https://'</span> + proxy</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">##Opener已经设置好代理了</span></span><br><span class="line">opener = build_opener(proxy_handler)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = opener.open(<span class="string">'http://httpbin.org/get'</span>)</span><br><span class="line">    <span class="comment"># 运行结果是一个JSON</span></span><br><span class="line">    print(response.read().decode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="keyword">except</span> URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br></pre></td></tr></table></figure>
+<p>这里使用了<code>ProxyHandler</code>,其参数是一个字典，键名是协议类型（比如<code>HTTP</code>或者<code>HTTPS</code>等），键值是代理链接，可以添加多个代理。然后，利用这个<code>Handler</code>及<code>build_opener()</code>方法构造一个opener,之后发送请求即可。<br><img src="https://img-blog.csdnimg.cn/20200415204155172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">输出结果如下：<br>运行结果中<code>origin</code>，表明了客户端的IP，这样我们就成功设置好代理，并可以隐藏了真实的IP了。<br><img src="https://img-blog.csdnimg.cn/2020041520452824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="设置代理的用户名和密码"><a href="#设置代理的用户名和密码" class="headerlink" title="设置代理的用户名和密码"></a>设置代理的用户名和密码</h2><p><img src="https://img-blog.csdnimg.cn/20200415204848477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> ProxyHandler, build_opener</span><br><span class="line"><span class="comment">##加入代理认证的用户名和密码</span></span><br><span class="line">proxy = <span class="string">'zhang:mima@127.0.0.1:808'</span></span><br><span class="line"></span><br><span class="line">proxy_handler = ProxyHandler(&#123;</span><br><span class="line">    <span class="string">'http'</span>: <span class="string">'http://'</span> + proxy,</span><br><span class="line">    <span class="string">'https'</span>: <span class="string">'https://'</span> + proxy</span><br><span class="line">&#125;)</span><br><span class="line">opener = build_opener(proxy_handler)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = opener.open(<span class="string">'http://httpbin.org/get'</span>)</span><br><span class="line">    print(response.read().decode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="keyword">except</span> URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br></pre></td></tr></table></figure>
+<p>运行结果<br><img src="https://img-blog.csdnimg.cn/20200415210346248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="获取cookie"><a href="#获取cookie" class="headerlink" title="获取cookie"></a>获取cookie</h2><p>Cookie的处理需要相关的<code>Handler</code>了。我们先用实例来看看怎样将网站的<code>cookie</code>获取下来。相关代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line">cookie=http.cookiejar.CookieJar()</span><br><span class="line">handler=urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener=urllib.request.build_opener(handler)</span><br><span class="line">response=opener.open(<span class="string">'http://zkaq.org'</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    print(item.name+<span class="string">"="</span>+item.value)</span><br></pre></td></tr></table></figure>
+<p>首先，我们必须声明一个CookieJar对象。接下来，就需要利用HTTPCookieProcessor来构建一个Handler，最后利用build_opener（）方法构建出Opener，执行open()函数即可。运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20200415213707260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">可以看到，这里输出了每条Cookie的名称和值<br>不过既然能输出，那可不可以输出成文件格式呢？我们知道<code>Cookies</code>实际上也是以文本形式保存的。<br>通过下面实例来看看，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置保存cookie的文件，同级目录下的cookie.txt</span></span><br><span class="line">filename = <span class="string">'cookie.txt'</span></span><br><span class="line"><span class="comment">#声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件</span></span><br><span class="line">cookie = http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line"><span class="comment">#利用urllib库的HTTPCookieProcessor对象来创建cookie处理器</span></span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line"><span class="comment">#通过handler来构建opener</span></span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line"><span class="comment">#创建一个请求，原理同urllib2的urlopen</span></span><br><span class="line">response = opener.open(<span class="string">"http://i.chaoxing.com/base?t=1586959507557"</span>)</span><br><span class="line"><span class="comment">#保存cookie到文件</span></span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>, ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>这时<code>Cookiejar</code>就需要换成<code>MozillaCookiejar</code>，它在生成文件时会用到，是<code>Cookiejar</code>的子类，可以用来处理Cookie和文件的相关事件，比如读取和保存<code>Cookies</code>,可以将<code>Cookies</code>保存成<code>Mozilla</code>型浏览器的cookie格式。运行之后发现生成<code>cookies.txt</code>文件，其内容如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200415223341168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>另外，<code>LWPCookiejar</code>同样也可以读取和保存<code>Cookies</code>,但是保存的格式和<code>MozillaCookiejar</code>不一样，它会保存成<code>libwww-perl(LWP)</code>格式的<code>Cookies</code>文件。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置保存cookie的文件，同级目录下的cookie.txt</span></span><br><span class="line">filename = <span class="string">'cookie.txt'</span></span><br><span class="line"><span class="comment">#声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件</span></span><br><span class="line">cookie = http.cookiejar.LWPCookieJar(filename)</span><br><span class="line"><span class="comment">#利用urllib库的HTTPCookieProcessor对象来创建cookie处理器</span></span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line"><span class="comment">#通过handler来构建opener</span></span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line"><span class="comment">#创建一个请求，原理同urllib2的urlopen</span></span><br><span class="line">response = opener.open(<span class="string">"http://i.chaoxing.com/base?t=1586959507557"</span>)</span><br><span class="line"><span class="comment">#保存cookie到文件</span></span><br><span class="line">cookie.save(ignore_discard=<span class="literal">True</span>, ignore_expires=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200415223857672.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">尤其看来，生成的格式差异还是有差异的。那么生成<code>Cookies</code>文件后，怎样从文件中读取并利用呢？<br>下面我们以<code>LWPCookiejar</code>可是为例来看一下，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar,urllib.request</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">filename = <span class="string">'cookie.txt'</span></span><br><span class="line"></span><br><span class="line">cookie = http.cookiejar.LWPCookieJar()</span><br><span class="line">cookie.load(<span class="string">'cookie.txt'</span>,ignore_discard=<span class="literal">True</span>,ignore_expires=<span class="literal">True</span>)</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line"></span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line"></span><br><span class="line">response = opener.open(<span class="string">"http://i.chaoxing.com/base?t=1586959507557"</span>)</span><br><span class="line"></span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<p>可以看到，这里调用<code>load()</code>方法来读取本地的<code>Cookie</code>文件，获取到<code>Cookie</code>的内容。不过前提我们首先生成了<code>LWPCookiejar</code>格式的<code>cookie</code>,并保存文件，然后读取<code>cookies</code>之后使用同样的方法构建<code>Handler</code>和<code>Opener</code>即可完成操作<br><img src="https://img-blog.csdnimg.cn/20200415224825357.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">运行结果正常的话，会输出超星学习通网页的源码。运行结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br></pre></td><td class="code"><pre><span class="line">G:\pythonp\python.exe C:/Users/<span class="number">74292</span>/PycharmProjects/untitled7/获取cookie.py</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;登录&lt;/title&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"/nervous/css/reset2.css?v=2"</span>&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"/nervous/css/jquery.mCustomScrollbar.css"</span>&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"/nervous/css/login2.css?v=2"</span>/&gt;</span><br><span class="line">	&lt;script src="/nervous/js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="/nervous/js/cookie.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">     iframe&#123;</span><br><span class="line">        height: <span class="number">260</span>px;</span><br><span class="line">        width: <span class="number">220</span>px;</span><br><span class="line">        margin: <span class="number">30</span>px <span class="number">70</span>px;</span><br><span class="line">      &#125;</span><br><span class="line">	  .isLogin&#123;</span><br><span class="line">	    overflow: hidden;</span><br><span class="line">        margin-top: <span class="number">10</span>px;</span><br><span class="line">        width:<span class="number">100</span>%;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .isLogin span&#123;</span><br><span class="line">	     display:block;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .isLogin span.remPwd&#123;</span><br><span class="line">	     float:right;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .isLogin span.remPwd i&#123;</span><br><span class="line">		  display:block;</span><br><span class="line">		  float:left;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .isLogin span input&#123;</span><br><span class="line">    		display: block;</span><br><span class="line">            float: left;</span><br><span class="line">            width: <span class="number">14</span>px;</span><br><span class="line">            height: <span class="number">14</span>px;</span><br><span class="line">            margin-top: <span class="number">2</span>px;</span><br><span class="line">            margin-left: <span class="number">5</span>px;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .isLogin span.orgLogin&#123;</span><br><span class="line">	     float:left;</span><br><span class="line">		 color: <span class="comment">#4d77ff;</span></span><br><span class="line">	  &#125;</span><br><span class="line">	  .content .login-area&#123;</span><br><span class="line">	         min-height: <span class="number">400</span>px!important;</span><br><span class="line">			 height: initial;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .content .login-area .tab-con .btn.btn-red&#123;</span><br><span class="line">	       margin-top:<span class="number">20</span>px;</span><br><span class="line">		   margin-bottom:<span class="number">40</span>px;</span><br><span class="line">	  &#125;</span><br><span class="line">	  .register&#123;</span><br><span class="line">	      bottom:<span class="number">20</span>px;</span><br><span class="line">	  &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="window"&gt;</span><br><span class="line">    &lt;div class="head"&gt;</span><br><span class="line">        &lt;div class="head-center"&gt;</span><br><span class="line">            &lt;div class="chaoxing-logo"&gt;</span><br><span class="line">                &lt;img src=<span class="string">"/nervous/images/logo.png"</span>/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;span class="black"&gt;超星微服务平台&lt;/span&gt;</span><br><span class="line">            &lt;div class="opreate"&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &lt;li class="appDown black"&gt;</span><br><span class="line">                        &lt;a href="javascript:void(0)"&gt;移动端下载&lt;/a&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;div class="matrix-code"&gt;</span><br><span class="line">                &lt;img src=<span class="string">"/nervous/images/QR-code.png"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                &lt;h4&gt;扫一扫下载学习通&lt;/h4&gt;</span><br><span class="line">                &lt;div class="triangle"&gt;&lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="content"&gt;</span><br><span class="line">        &lt;div class="center"&gt;</span><br><span class="line">            &lt;div class="login-area login-box"&gt;</span><br><span class="line">                &lt;div class="tab red"&gt;</span><br><span class="line">                    &lt;ul&gt;</span><br><span class="line">                        &lt;li class="active"&gt;扫码登录&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;手机号/超星号登录&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="tab-con"&gt;</span><br><span class="line">                     &lt;!-- &lt;div class="item" style="display: block;"&gt;</span><br><span class="line">                        &lt;img src=<span class="string">"/nervous/images/QR-code.png"</span>/&gt;</span><br><span class="line">                        &lt;p&gt;使用学习通APP扫码登录&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;--&gt;</span><br><span class="line">                    &lt;div class="code-login item"&gt;</span><br><span class="line">                        &lt;!-- &lt;p class="text1"&gt;使用 超星学习通 APP 扫码登录&lt;/p&gt; --&gt;</span><br><span class="line">                        &lt;iframe id="iframe" src="http://passport2.chaoxing.com/cloudscanlogin?mobiletip=%e7%94%b5%e8%84%91%e7%ab%af%e7%99%bb%e5%bd%95%e7%a1%ae%e8%ae%a4&amp;pcrefer=http://i.chaoxing.com" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"  class="QR-code"&gt;&lt;/iframe&gt;</span><br><span class="line">                        &lt;!-- &lt;p class="text2"&gt;没有账号</span><br><span class="line">                            &lt;a&gt;立即注册&lt;/a&gt;</span><br><span class="line">                        &lt;/p&gt; </span><br><span class="line">                         &lt;div class="register" style="margin: 21px 0 0 38px;"&gt;没有账号，去 &lt;span&gt;注册&lt;/span&gt;&lt;/div&gt;--&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class="item" style="display: none;"&gt;</span><br><span class="line">                        &lt;div class="inp"&gt;</span><br><span class="line">                            &lt;input type=<span class="string">"text"</span> placeholder=<span class="string">"请输入手机号/超星号"</span>/ id = <span class="string">"uin_tips"</span>&gt;</span><br><span class="line">                            &lt;p class="error-tips" id="uin_error"&gt;&lt;/p&gt;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line">                        &lt;div class="inp" style="height: inherit; overflow: hidden;"&gt;</span><br><span class="line">                            &lt;input type=<span class="string">"password"</span> placeholder=<span class="string">"请输入密码"</span> id = <span class="string">"pwd_tips"</span>/&gt;</span><br><span class="line">                            &lt;p class="error-tips" id="pwd_error"&gt;&lt;/p&gt;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line">                        &lt;div class="isLogin"&gt;</span><br><span class="line">							&lt;span class="remPwd"&gt;&lt;i&gt;记住密码&lt;/i&gt;&lt;input id="memorization" type="checkbox" value="" /&gt; &lt;/span&gt; </span><br><span class="line">                            &lt;span onclick="orgLogin();" class="orgLogin"&gt;机构账号登录&lt;/span&gt;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line">                        &lt;input type="button" class="btn btn-red disable" value="登录" id="login"  onclick="prevlogin();"&gt;</span><br><span class="line">                        &lt;!-- 没有账号，去注册 --&gt;</span><br><span class="line">                        &lt;div class="register"&gt;没有账号，去 &lt;span&gt;注册&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;!-- 注册--&gt;</span><br><span class="line">            &lt;div class="login-area register-area" style="display: none;"&gt;</span><br><span class="line">                &lt;div class="register-title"&gt;注册&lt;/div&gt;</span><br><span class="line">                &lt;div class="userInfo"&gt;</span><br><span class="line">                    &lt;div class="inp"&gt;</span><br><span class="line">                        &lt;input type=<span class="string">"text"</span> placeholder=<span class="string">"输入姓名"</span> id=<span class="string">"rname"</span> onblur=<span class="string">"changeName();"</span>&gt;</span><br><span class="line">                        &lt;p class="error-tips" id="rname_error"&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class="inp"&gt;</span><br><span class="line">                        &lt;input type=<span class="string">"text"</span> placeholder=<span class="string">"输入手机号"</span> id=<span class="string">"rtel"</span> onblur=<span class="string">"changeTel();"</span>&gt;</span><br><span class="line">                        &lt;p class="error-tips" id="rtel_error"&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class="inp"&gt;</span><br><span class="line">                        &lt;input type=<span class="string">"password"</span> placeholder=<span class="string">"设置密码(6-16位)"</span> id=<span class="string">"rpwd"</span> onblur=<span class="string">"changePwd();"</span>&gt;</span><br><span class="line">                        &lt;img class="clickLook" src="/nervous/images/not_look.png" alt=""&gt;</span><br><span class="line">                        &lt;p class="error-tips" id="rpwd_error"&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class="inp"&gt;</span><br><span class="line">                        &lt;input type=<span class="string">"text"</span> placeholder=<span class="string">"输入验证码"</span> id=<span class="string">"rcode"</span> onblur=<span class="string">"getRcode();"</span>&gt;</span><br><span class="line">                        &lt;!-- 加入 hasSeed 是发送验证码后的样式--&gt;</span><br><span class="line">                        &lt;div class="authCode" onclick="sendCode();"&gt;发送验证码&lt;/div&gt;</span><br><span class="line">                        &lt;p class="error-tips" id="rcode_error"&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &lt;!-- 加入 disable 是不能注册的按钮样式 --&gt;</span><br><span class="line">                &lt;div class="register-btn"&gt;注册&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                &lt;div class="go-login"&gt;已有账号，去 &lt;span&gt;登录&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class="maker"&gt;</span><br><span class="line">                &lt;p class="title1 title3"&gt;超星微服务平台&lt;/p&gt;</span><br><span class="line">                &lt;img src=<span class="string">"/nervous/images/maker_2.png"</span>/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!--机构登录--&gt;</span><br><span class="line">            &lt;div class="login-area register-unit"&gt;</span><br><span class="line">                &lt;div class="unitTitle"&gt;</span><br><span class="line">                    &lt;img src=<span class="string">"/nervous/images/unitBack.png"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                    &lt;h3&gt;机构账号登录&lt;/h3&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="registerCon"&gt;</span><br><span class="line">                    &lt;p class="registerTips"&gt;输入学号、借书证号需预先&lt;i&gt;选择单位&lt;/i&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;p class="registerChange" id="org_info"&gt;&lt;i&gt;切换单位&lt;/i&gt;&lt;/p&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="registerUser"&gt;</span><br><span class="line">                    &lt;input type=<span class="string">"text"</span> placeholder=<span class="string">"学号/工号"</span> id=<span class="string">"org_name"</span>&gt;</span><br><span class="line">                    &lt;p id="oname_error"&gt;&lt;/p&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="registerPwd"&gt;</span><br><span class="line">                    &lt;input type=<span class="string">"password"</span> placeholder=<span class="string">"密码"</span>  id=<span class="string">"org_pwd"</span>&gt;</span><br><span class="line">                    &lt;p id="opwd_error"&gt;&lt;/p&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="registerCode"&gt;</span><br><span class="line">                    &lt;input type="text" placeholder="请输入右边四位数字" class="codeCon" id="org_code"&gt;</span><br><span class="line">                    &lt;img class="codeImg" id="imgCode" src="/code/create.shtml"/&gt;</span><br><span class="line">                    &lt;span onclick="getImgCode();"&gt;看不清？&lt;/span&gt;</span><br><span class="line">					&lt;p id="ocode_error"&gt;&lt;/p&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div class="registerBtn"&gt;登录&lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- 选择单位弹窗--&gt;</span><br><span class="line">    &lt;div class="marsker"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="popup unitPopup"&gt;</span><br><span class="line">        &lt;div class="popupTitle"&gt;</span><br><span class="line">            &lt;h3&gt;选择单位&lt;/h3&gt;</span><br><span class="line">            &lt;div class="popupClose"&gt;</span><br><span class="line">                &lt;img src=<span class="string">"/nervous/images/closeBtn.png"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class="popupSearch"&gt;</span><br><span class="line">            &lt;div class="searchCon"&gt;</span><br><span class="line">                &lt;img src=<span class="string">"/nervous/images/iconSearch.png"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                &lt;input type="text" placeholder="单位名称" class="resouseName" onkeydown="keydowdSearch(event);"&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;button&gt;搜索&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="popupResult"&gt;</span><br><span class="line">            &lt;div class="popupProvince fl"&gt;</span><br><span class="line">                &lt;ul id=<span class="string">"provinceUl"</span>&gt;</span><br><span class="line">                   </span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class="popupWorks fl"&gt;</span><br><span class="line">                &lt;div class="initials"&gt;</span><br><span class="line">                    &lt;div class="allWorks active"&gt;全部&lt;/div&gt;</span><br><span class="line">                    &lt;div class="initialsList"&gt;</span><br><span class="line">                        &lt;ul id=<span class="string">"allWorksUl"</span>&gt;</span><br><span class="line">                            &lt;li&gt;A&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;B&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;C&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;D&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;E&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;F&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;G&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;H&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;I&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;J&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;K&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;L&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;M&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;N&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;O&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;P&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;Q&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;R&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;S&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;T&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;U&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;V&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;W&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;X&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;Y&lt;/li&gt;</span><br><span class="line">                            &lt;li&gt;Z&lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class="workList"&gt;</span><br><span class="line">                        &lt;ul id=<span class="string">"orgList"</span>&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="searchResult"&gt;</span><br><span class="line">            &lt;div class="goBack"&gt;&lt;span&gt;返回&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class="workList searchResultList "&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="workHover"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="foot-er black"&gt;版权所有©超星公司 京 B2-20080224-16 Copyright©超星&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src="/nervous/js/jquery.mCustomScrollbar.concat.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type="text/javascript" src="/nervous/js/login.js?v=1"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	var type=<span class="number">1</span>;</span><br><span class="line">    var rcode = <span class="string">""</span>;</span><br><span class="line">    (function () &#123;</span><br><span class="line">	</span><br><span class="line">       	//分析cookie值，显示上次的登陆信息   </span><br><span class="line">	   	var memorization = getCookieValue(<span class="string">"memorization"</span>); </span><br><span class="line">	    var userNameValue = getCookieValue(<span class="string">"userName"</span>); </span><br><span class="line">        var userNameValue = getCookieValue(<span class="string">"userName"</span>); </span><br><span class="line">		<span class="keyword">if</span>(memorization!=null &amp;&amp; memorization!=undefined &amp;&amp; memorization!=<span class="string">''</span> &amp;&amp; memorization!=<span class="string">'null'</span> &amp;&amp; memorization==<span class="string">'true'</span> )&#123;</span><br><span class="line">			$(<span class="string">"#memorization"</span>).attr(<span class="string">"checked"</span>,<span class="string">"checked"</span>);</span><br><span class="line">			var flag=true;</span><br><span class="line">    		<span class="keyword">if</span>(userNameValue!=null &amp;&amp; userNameValue!=undefined &amp;&amp; userNameValue!=<span class="string">''</span> &amp;&amp; userNameValue!=<span class="string">'null'</span>)&#123;</span><br><span class="line">    			$(<span class="string">"#uin_tips"</span>).val(userNameValue);  </span><br><span class="line">    		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				flag=false;</span><br><span class="line">			&#125;</span><br><span class="line">           	var passWordValue = getCookieValue(<span class="string">"passWord"</span>);   </span><br><span class="line">    	   	<span class="keyword">if</span>(passWordValue!=null &amp;&amp; passWordValue!=undefined &amp;&amp; passWordValue!=<span class="string">''</span> &amp;&amp; passWordValue!=<span class="string">'null'</span>)&#123;</span><br><span class="line">    			 $(<span class="string">"#pwd_tips"</span>).val(passWordValue); </span><br><span class="line">    		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				flag=false;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                $(<span class="string">"#login"</span>).removeClass(<span class="string">"disable"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			$(<span class="string">"#login"</span>).addClass(<span class="string">"disable"</span>);</span><br><span class="line">			$(<span class="string">"#memorization"</span>).removeAttr(<span class="string">"checked"</span>);</span><br><span class="line">			deleteCookie(<span class="string">"userName"</span>,<span class="string">""</span>);</span><br><span class="line">			deleteCookie(<span class="string">"passWord"</span>,<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">        //  滚动条</span><br><span class="line">        $(<span class="string">".workList"</span>).mCustomScrollbar();</span><br><span class="line">        /* table的hover */</span><br><span class="line">        $(<span class="string">".workList li"</span>).on(<span class="string">'mouseenter'</span>, function (e) &#123;</span><br><span class="line">            var leftX = e.pageX + <span class="number">10</span>;</span><br><span class="line">            var topY = e.pageY + <span class="number">10</span>;</span><br><span class="line">            console.log(leftX, topY);</span><br><span class="line">            var tdText = $(this).text();</span><br><span class="line">            $(<span class="string">".workHover"</span>).text(tdText);</span><br><span class="line">            $(<span class="string">".workHover"</span>).css(&#123;<span class="string">'left'</span>: leftX, <span class="string">'top'</span>: topY&#125;).show();</span><br><span class="line">        &#125;);</span><br><span class="line">        $(<span class="string">".workList li"</span>).on(<span class="string">'mouseleave'</span>, function () &#123;</span><br><span class="line">            $(<span class="string">".workHover"</span>).hide();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // 选择单位</span><br><span class="line">		$(<span class="string">"body"</span>).on(<span class="string">'click'</span>,<span class="string">'.workList li'</span>,function()&#123;</span><br><span class="line">			var name=$(this).attr(<span class="string">"title"</span>);</span><br><span class="line">			var fid=$(this).attr(<span class="string">"id"</span>);</span><br><span class="line">			var domain=$(this).attr(<span class="string">"domain"</span>);</span><br><span class="line">            $(<span class="string">".searchCon input"</span>).val(<span class="string">""</span>);</span><br><span class="line">			<span class="keyword">if</span>(name!=null &amp;&amp; name!=undefined &amp;&amp; name!=<span class="string">''</span> &amp;&amp; name!=<span class="string">'null'</span> &amp;&amp;</span><br><span class="line">				fid!=null &amp;&amp; fid!=undefined &amp;&amp; fid!=<span class="string">''</span> &amp;&amp; fid!=<span class="string">'null'</span> )&#123;</span><br><span class="line">				$(<span class="string">"#org_info"</span>).html(name+<span class="string">"&lt;i&gt;切换单位&lt;/i&gt;"</span>).attr(<span class="string">"fid"</span>,fid).attr(<span class="string">"domain"</span>,domain);</span><br><span class="line">                $(this).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">"active"</span>);</span><br><span class="line">                $(<span class="string">".marsker,.unitPopup,.registerTips"</span>).hide();</span><br><span class="line">                $(<span class="string">".register-unit"</span>).show();</span><br><span class="line">                $(<span class="string">".registerChange"</span>).show();</span><br><span class="line">				getImgCode();</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        $(<span class="string">".marsker,.popupClose"</span>).click(function () &#123;</span><br><span class="line">			var fid=$(<span class="string">"#org_info"</span>).attr(<span class="string">"fid"</span>);</span><br><span class="line">			<span class="keyword">if</span>(fid!=null &amp;&amp; fid!=undefined &amp;&amp; fid!=<span class="string">''</span> &amp;&amp; fid!=<span class="string">'null'</span> )&#123;</span><br><span class="line">				$(<span class="string">".registerTips"</span>).hide();</span><br><span class="line">                $(<span class="string">".register-unit"</span>).show();</span><br><span class="line">                $(<span class="string">".registerChange"</span>).show();</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $(<span class="string">".register-unit"</span>).show();</span><br><span class="line">                $(<span class="string">".registerTips"</span>).show();</span><br><span class="line">				$(<span class="string">".registerChange"</span>).hide();</span><br><span class="line">			&#125;</span><br><span class="line">            $(<span class="string">".marsker,.unitPopup"</span>).hide();</span><br><span class="line">            $(<span class="string">".searchCon input"</span>).val(<span class="string">""</span>);</span><br><span class="line">			getImgCode();</span><br><span class="line">        &#125;);</span><br><span class="line">        // 选择省</span><br><span class="line">		$(<span class="string">"body"</span>).on(<span class="string">'click'</span>,<span class="string">'.popupProvince li'</span>,function()&#123;</span><br><span class="line">            $(this).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">			getOrgList();</span><br><span class="line">        &#125;);</span><br><span class="line">        // 选择首字母</span><br><span class="line">		$(<span class="string">"body"</span>).on(<span class="string">'click'</span>,<span class="string">'.initialsList li'</span>,function()&#123;</span><br><span class="line">            $(this).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">            $(<span class="string">".allWorks"</span>).removeClass(<span class="string">'active'</span>);</span><br><span class="line">			getOrgList();</span><br><span class="line">        &#125;);</span><br><span class="line">		// 选择字母全部</span><br><span class="line">		$(<span class="string">"body"</span>).on(<span class="string">'click'</span>,<span class="string">'.allWorks'</span>,function()&#123;</span><br><span class="line">            $(this).addClass(<span class="string">'active'</span>);</span><br><span class="line">            $(<span class="string">".initialsList li"</span>).removeClass(<span class="string">'active'</span>);</span><br><span class="line">			getOrgList();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // 是否为空</span><br><span class="line">        $(<span class="string">".registerUser input,.registerPwd input,.registerCode input"</span>).keyup(function () &#123;</span><br><span class="line">            isNull();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        function isNull() &#123;</span><br><span class="line">            <span class="keyword">if</span> ($(<span class="string">".registerUser input"</span>).val() &amp;&amp; $(<span class="string">".registerPwd input"</span>).val() &amp;&amp; $(<span class="string">".registerCode input"</span>).val()) &#123;</span><br><span class="line">                $(<span class="string">".registerBtn"</span>).addClass(<span class="string">'registerBtnActive'</span>).attr(<span class="string">"onclick"</span>,<span class="string">"orglogin();"</span>);;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $(<span class="string">".registerBtn"</span>).removeClass(<span class="string">'registerBtnActive'</span>).removeAttr(<span class="string">"onclick"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		$(<span class="string">"body"</span>).on(<span class="string">'click'</span>, <span class="string">'.registerChange i,.registerTips i'</span>, function () &#123;</span><br><span class="line">            $(<span class="string">".marsker,.unitPopup"</span>).show();</span><br><span class="line">			getProvince();</span><br><span class="line">        &#125;);</span><br><span class="line">        // 搜索</span><br><span class="line">        $(<span class="string">".resouseName"</span>).keyup(function () &#123;</span><br><span class="line">            <span class="keyword">if</span> ($(this).val().length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                $(<span class="string">".popupSearch button"</span>).addClass(<span class="string">'btnIpt'</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $(<span class="string">".popupSearch button"</span>).removeClass(<span class="string">'btnIpt'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        $(<span class="string">"body"</span>).on(<span class="string">'click'</span>,<span class="string">'.popupSearch .btnIpt'</span>,function () &#123;</span><br><span class="line">           $(<span class="string">".popupResult"</span>).hide();</span><br><span class="line">           $(<span class="string">".searchResult"</span>).show();</span><br><span class="line">           searchOrgList();</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        // 搜索结果返回</span><br><span class="line">        $(<span class="string">".searchResult .goBack"</span>).click(function () &#123;</span><br><span class="line">            $(<span class="string">".popupResult"</span>).show();</span><br><span class="line">            $(<span class="string">".searchResult"</span>).hide();</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // 返回</span><br><span class="line">        $(<span class="string">".unitTitle img"</span>).click(function () &#123;</span><br><span class="line">			type=<span class="number">1</span>;</span><br><span class="line">			$(<span class="string">"#org_info"</span>).html(<span class="string">"&lt;i&gt;切换单位&lt;/i&gt;"</span>).removeAttr(<span class="string">"fid"</span>).removeAttr(<span class="string">"domain"</span>);</span><br><span class="line">            $(<span class="string">".register-unit"</span>).hide();</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        var clickStatus = true;</span><br><span class="line">        $(<span class="string">".appDown"</span>).click(function (event) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">            <span class="keyword">if</span> (clickStatus) &#123;</span><br><span class="line">                $(<span class="string">".matrix-code"</span>).show();</span><br><span class="line">                clickStatus = false;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $(<span class="string">".matrix-code"</span>).hide();</span><br><span class="line">                clickStatus = true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        $(<span class="string">"body"</span>).on(<span class="string">'click'</span>, function (event) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">            $(<span class="string">".matrix-code"</span>).hide();</span><br><span class="line">            clickStatus = true;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        var tab_li = $(<span class="string">".login-area .tab li"</span>);</span><br><span class="line">        tab_li.on(<span class="string">"click"</span>, function () &#123;</span><br><span class="line">            var i = $(this).index();</span><br><span class="line">            tab_li.removeClass(<span class="string">"active"</span>);</span><br><span class="line">            $(this).addClass(<span class="string">"active"</span>);</span><br><span class="line">            $(<span class="string">".tab-con .item"</span>).hide();</span><br><span class="line">            $(<span class="string">".tab-con .item"</span>).eq(i).show();</span><br><span class="line">        &#125;)</span><br><span class="line">        var inp = $(<span class="string">".item input[type='text']"</span>);</span><br><span class="line">        var login_btn = $(<span class="string">"#login"</span>);</span><br><span class="line">        inp.on(<span class="string">"input"</span>, function () &#123;</span><br><span class="line">            btnControl();</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        function btnControl() &#123;</span><br><span class="line">            var flag = true;</span><br><span class="line">            inp.each(function () &#123;</span><br><span class="line">                <span class="keyword">if</span> (!$(this).val()) &#123;</span><br><span class="line">                    flag = false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                login_btn.removeClass(<span class="string">"disable"</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                login_btn.addClass(<span class="string">"disable"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 点击密码可看不可看</span><br><span class="line">        $(<span class="string">'.clickLook'</span>).on(<span class="string">'click'</span>, function () &#123;</span><br><span class="line">            <span class="keyword">if</span> ($(this).attr(<span class="string">'isClick'</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                $(this).siblings(<span class="string">'input'</span>).attr(<span class="string">'type'</span>, <span class="string">'password'</span>);</span><br><span class="line">                $(this).attr(<span class="string">'src'</span>, <span class="string">'/nervous/images/not_look.png'</span>);</span><br><span class="line">                $(this).attr(<span class="string">'isClick'</span>, <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $(this).siblings(<span class="string">'input'</span>).attr(<span class="string">'type'</span>, <span class="string">'text'</span>);</span><br><span class="line">                $(this).attr(<span class="string">'src'</span>, <span class="string">'/nervous/images/look.png'</span>);</span><br><span class="line">                $(this).attr(<span class="string">'isClick'</span>, <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        // 点击注册</span><br><span class="line">        $(<span class="string">'.register span'</span>).on(<span class="string">'click'</span>, function () &#123;</span><br><span class="line">            //$(<span class="string">'.login-box,.register-unit'</span>).hide();</span><br><span class="line">            //$(<span class="string">'.register-area'</span>).show();</span><br><span class="line">            window.location.href = <span class="string">"http://passport2.chaoxing.com/register3?refer=http://i.chaoxing.com"</span>;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        // 点击去登录</span><br><span class="line">        $(<span class="string">'.go-login span'</span>).on(<span class="string">'click'</span>, function () &#123;</span><br><span class="line">            $(<span class="string">'.login-box'</span>).show();</span><br><span class="line">            $(<span class="string">'.register-area'</span>).hide();</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        document.onkeydown = function (event) &#123;</span><br><span class="line">        var e = event || window.event;</span><br><span class="line">        <span class="keyword">if</span> (e &amp;&amp; e.keyCode == <span class="number">13</span>) &#123;</span><br><span class="line">                $(<span class="string">"#login"</span>).click();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;; </span><br><span class="line">    &#125;)()</span><br><span class="line">	</span><br><span class="line">    // 机构账号登录</span><br><span class="line">	function orgLogin() &#123;</span><br><span class="line">		type=<span class="number">2</span>;</span><br><span class="line">        $(<span class="string">".marsker,.unitPopup"</span>).show();</span><br><span class="line">		$(<span class="string">"#org_info"</span>).html(<span class="string">"&lt;i&gt;切换单位&lt;/i&gt;"</span>).removeAttr(<span class="string">"fid"</span>).removeAttr(<span class="string">"domain"</span>);</span><br><span class="line">		getProvince();</span><br><span class="line">		getImgCode();</span><br><span class="line">    &#125;;</span><br><span class="line">	</span><br><span class="line">	function load()&#123;</span><br><span class="line">		$(<span class="string">'#iframe'</span>).attr(<span class="string">'src'</span>, $(<span class="string">'#iframe'</span>).attr(<span class="string">'src'</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	//搜索单位回车</span><br><span class="line">    function keydowdSearch(event)&#123;</span><br><span class="line">        <span class="keyword">if</span>(event.keyCode==<span class="number">13</span>)&#123;</span><br><span class="line">            $(<span class="string">".popupResult"</span>).hide();</span><br><span class="line">            $(<span class="string">".searchResult"</span>).show();</span><br><span class="line">            searchOrgList();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	function prevlogin()&#123;</span><br><span class="line">    	var username = $(<span class="string">"#uin_tips"</span>).val();</span><br><span class="line">    	var pattern = new RegExp(<span class="string">"[`~!@#$^&amp;*()=|&#123;&#125;':;',\\[\\].&lt;&gt;《》/?~！@#￥……&amp;*（）——|&#123;&#125;【】‘；：”“'。，、？]"</span>);</span><br><span class="line">        <span class="keyword">if</span>(pattern.test(username))&#123; // 特殊符号验证</span><br><span class="line">        	$(<span class="string">"#uin_error"</span>).html(<span class="string">"请输入正确的手机号/超星号"</span>);</span><br><span class="line">        	<span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (escape(username).indexOf(<span class="string">"%u"</span>)!=<span class="number">-1</span>)&#123;   // 文字验证 </span><br><span class="line">			$(<span class="string">"#uin_error"</span>).html(<span class="string">"请输入正确的手机号/超星号"</span>);</span><br><span class="line">        	<span class="keyword">return</span>; </span><br><span class="line">		&#125;   </span><br><span class="line">		vlogin();</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>通过上面的方法，我们可以实现大多数的请求功能的设置了。<br>这边说urllib库中request模块的基本用法，如果想实现更多的功能，可以参考官方文档说明：<code>https://docs.python.org/3/library/urllib.request.html#basehandler-objects</code></p>
+<h2 id="3-1-2处理异常"><a href="#3-1-2处理异常" class="headerlink" title="3.1.2处理异常"></a>3.1.2处理异常</h2><p>前面我们了解了发送请求的发送过程，但是网络不好的情况下，如果出现了异常，该怎么办呢？这时候如果不处理这些异常，程序很可能因报错而终止运行，所以异常处理还是十分有必要的。</p>
+<p>urllib的error模块定义了由request模块产生的异常。如果出现了问题，request模块便会抛出error模块中定义的异常。</p>
+<p><strong>1.URLError</strong></p>
+<p><code>URLError</code>类来自<code>urllib</code>库的<code>error</code>模块，它继承自<code>OSError</code>类，是<code>error</code>异常模块的基类，由<code>request</code>模块产生的异常都可以通过捕获这个类来处理。<br>它具有一个属性<code>reason</code>，即返回错误的原因。下面用一个实验来看看输出结果，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">'https://hpb1-boke.github.io/a'</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br></pre></td></tr></table></figure>
+<p>程序没有直接报错，而是输出了内容，通过这样的操作，我们就可以避免程序异常终止，同时异常得到了有效处理。<br><img src="https://img-blog.csdnimg.cn/20200416093327991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><strong>2.HTTPError</strong></p>
+<p>它是<code>URLError</code>的子类，专门用来处理<code>HTTP</code>请求错误，比如认证请求失败等。他有如下3个属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">code:  返回HTTP的状态码，比如<span class="number">404</span>表示网页不存在，<span class="number">500</span>表示服务器内部错误。</span><br><span class="line"></span><br><span class="line">reason:  同父类一样，用于返回错误的原因。</span><br><span class="line"></span><br><span class="line">headers: 返回请求头。</span><br></pre></td></tr></table></figure>
+<p>下面用一个实验来看看输出结果，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">'https://hpb1-boke.github.io/a'</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason,e.code,e.headers,sep=<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200416094514749.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">运行结果：<br><img src="https://img-blog.csdnimg.cn/20200416094447707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">依然是同样的网址，这里捕获了<code>HTTPError</code>异常，输出了<code>reason</code>、<code>code</code>和<code>headers</code>属性。</p>
+<p>因为<code>URLError</code>是<code>HTTPError</code>的父类，所以可以先选择捕获子类的错误，再去捕获父类的错误，所以以上述代码更好的写法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=request.urlopen(<span class="string">'https://hpb1-boke.github.io/a'</span>)</span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason,e.code,e.headers,sep=<span class="string">'\n'</span>)</span><br><span class="line"><span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Request SUccessfully'</span>)</span><br></pre></td></tr></table></figure>
+<p>这样就可以做到先捕获<code>HTTPError</code>，获取它的<code>错误状态码、原因、headers</code>等信息。如果不是HTTPError异常，就会捕获到<code>URLError异常</code>，<code>输出错误的原因。最后用else来处理正常的逻辑</code>。这是一个较好处理异常的写法。<br><img src="https://img-blog.csdnimg.cn/20200416095528453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">有时候，<code>reason属性返回的不一定是字符串，也可能是一个对象，</code>再看看下面的实验，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response=urllib.request.urlopen(<span class="string">'https://baidu.com'</span>,timeout=<span class="number">0.01</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(type(e.reason))</span><br><span class="line">    <span class="keyword">if</span> isinstance(e.reason,socket.timeout):</span><br><span class="line">        print(<span class="string">'TIME OUT'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416100108904.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20200416100129309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,colsocket.timeoutor_FFFFFF,t_70" alt="在这里插入图片描述">)可以发现，<code>reason</code>属性的结果是<code>socket.timeout</code>类。所以，这里我们可以用<code>isinstance()</code>方法来判断它的类型，做出详细的异常判断。</p>
+<p>本节中，我们讲述了<code>error模块的相关用法</code>，通过合理地捕获异常可以做出更精确的异常判断，始程序更加稳健。</p>
+<h2 id="3-1-3解析链接"><a href="#3-1-3解析链接" class="headerlink" title="3.1.3解析链接"></a>3.1.3解析链接</h2><p>前面说过，urllib库里还提供了parse模块，它定义了处理URL的标准接口，例如实现URL各部分的抽取、合并以及链接转换。它支持如下协议的URL处理：<code>file、ftp、gopher、hdl、http、https、imap、mailto、mms、news、nntp、prospero、rsync、rtsp、rtspu、sftp、sip、sips、snews、svn、svn+ssh、telnet和wais</code>。本节中，我们介绍一下该模块中常用的方法拉看一下它的便携之处。</p>
+<h2 id="1-urlparse"><a href="#1-urlparse" class="headerlink" title="1.urlparse()"></a><strong>1.urlparse()</strong></h2><p>该方法可以实现<code>URL</code>的识别分段，这里先用一个实例来看一下，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span>  urlparse</span><br><span class="line">result=urlparse(<span class="string">'https://baidu.com/index.html;user?id=5#comment'</span>)</span><br><span class="line">print(type(result),result)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200416102038888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)这里我们利用urlparse()方法进行了一个URL的解析。首先，输出了解析结果的类型，然后将结果也输出出来。</p>
+<p>运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20200416102216698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">可以看到，返回结果是一个<code>ParseResult</code>类型的对象，它包含6个部分，分别是<code>scheme、netloc、path、params、query和fragment。</code><br>观察一下该实例的URL：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://baidu.com/index.html;user?id=5#comment</span><br></pre></td></tr></table></figure>
+
+<p>可以发现，urlparse()方法将其拆分成了6个部分。大体观察可以发现，解析时有特定的分隔符。比如 <code>://</code>前面就是<code>scheme</code>,代表协议；第一个<code>/</code>符号前面便是<code>netloc</code>，<code>即域名</code>，<code>后面是path,即访问路径</code>；<code>分号；后面是params，代表参数</code>；<code>问号？后面是查询条件query，一般用作GET类型的URL</code>;<code>井号#后面是描点，用于直接定位页面内部的下拉位置。</code><br>所以，可以得出一个标准的链接格式，具体如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme://netloc/path;params?query#fragment</span><br></pre></td></tr></table></figure>
+<p>一个标准的<code>URL</code>都会符合这个规则，利用<code>urlparse()</code>方法可以将它拆分开来。处理这种最基本的解析协议方式外<code>，urlparse()</code>方法还有其他配置吗？接下来，看一下他的<code>API用法</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urllib.parse.urlparse(urlstring,scheme=<span class="string">''</span>,allow_fragments=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="urlstring-这是必填项，即解析的URL。"><a href="#urlstring-这是必填项，即解析的URL。" class="headerlink" title="urlstring: 这是必填项，即解析的URL。"></a><strong>urlstring:</strong> 这是必填项，即解析的URL。</h2><p>scheme： 它是默认的协议（比如http或https等）。假如这个链接没有带协议信息，会将这个作为默认的协议。我们用实例看一下，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line">result=urlparse(<span class="string">'www.baidu.com/index.html;user?id=5#comment'</span>,scheme=<span class="string">'https'</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>可以发现，我们提供的URL没有包含最前面的scheme信息，但是通过指定默认的scheme参数，返回的结果是https。<br><img src="https://img-blog.csdnimg.cn/20200416141440387.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">假设我们带上了scheme，代码如下。可见，schema参数只有在URL中不包含scheme信息时才生效。如果URL中有信息，就会返回解析出的scheme。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line">result=urlparse(<span class="string">'http://www.baidu.com/index.html;user?id=5#comment'</span>,scheme=<span class="string">'https'</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416141929758.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="allow-fragments-即是否忽略fragment。如果它被设置为False-fragment部分就会被忽略，它会被解析为path、params或者query的一部分，而fragment部分为空。"><a href="#allow-fragments-即是否忽略fragment。如果它被设置为False-fragment部分就会被忽略，它会被解析为path、params或者query的一部分，而fragment部分为空。" class="headerlink" title="allow_fragments:即是否忽略fragment。如果它被设置为False,fragment部分就会被忽略，它会被解析为path、params或者query的一部分，而fragment部分为空。"></a>allow_fragments:即是否忽略fragment。如果它被设置为False,fragment部分就会被忽略，它会被解析为path、params或者query的一部分，而fragment部分为空。</h2><p>下面我们用实例来看一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">'http://www.baidu.com/index.html;user?id=5#comment'</span>,allow_fragments=<span class="literal">False</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416142832147.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">假设<code>URL</code>中不包含<code>params</code>和<code>query</code>，我们再通过实例看一下。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">'http://www.baidu.com/index.html#comment'</span>,allow_fragments=<span class="literal">False</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>可以发现，当URL中不包含params和query时，fragment便会被解析为path的一部分。返回结果<img src="https://img-blog.csdnimg.cn/20200416165419494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><code>ParseResult</code>实际上是一个元组，我们可以用索引顺序来获取，也可以用属性名获取，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result=urlparse(<span class="string">'http://www.baidu.com/index.html#comment'</span>,allow_fragments=<span class="literal">False</span>)</span><br><span class="line">print(result.scheme,result[<span class="number">0</span>],result.netloc,result[<span class="number">1</span>],sep=<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>这里我们分别用索引和属性名获取了<code>scheme和netloc</code>，可以发现，二者的结果是一致的，两种方法都可以成功获取。<br><img src="https://img-blog.csdnimg.cn/20200416170148478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="urlunparse"><a href="#urlunparse" class="headerlink" title="urlunparse()"></a>urlunparse()</h2><p>有了<code>urlparse()</code>，相应地就有了它的对立方法<code>urlunparse()</code>，它接受的参数是一个可迭代的对象，但是它的长度必须是6，否则会抛出数量的不足或者过多的问题。先用一个实例看一下，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data=[<span class="string">'http'</span>,<span class="string">'www.baidu.com'</span>,<span class="string">'index.html'</span>,<span class="string">'user'</span>,<span class="string">'a=6'</span>,<span class="string">'comment'</span>]</span><br><span class="line">print(urlunparse(data))</span><br></pre></td></tr></table></figure>
+<p>这里参数<code>data</code>用了列表类型。当然你也可以用其他类型，比如元件或者特定的数据结构。运行结果如下所示，这样我就成功实现了对<code>URL</code>的构造。<br><img src="https://img-blog.csdnimg.cn/20200416171514653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="urlsplist"><a href="#urlsplist" class="headerlink" title="urlsplist()"></a>urlsplist()</h2><p>这个方法和<code>urlparse()</code>方法非常相似，只不过它不再单独解析<code>params</code>这一部分，只返回<code>5个结果</code>。上面例子中的<code>params会合并到path中</code>。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">'http://www.baidu.com/index.html;user?id=5#comment'</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200416194911410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">可以发现返回的结果是<code>SplitResult</code>，它其实也是一个元组类型，既可以用属性获取值，也可以用索引来获取。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result=urlsplit(<span class="string">'http://www.baidu.com/index.html;user?id=5#comment'</span>)</span><br><span class="line">print(result.scheme,result[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416195200201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="urlunsplist"><a href="#urlunsplist" class="headerlink" title="urlunsplist()"></a>urlunsplist()</h2><p>与<code>urlunparse()</code>类似，它也是将链接各个部分组合成完整链接的方法，传入的参数也是一个可迭代对象，例如列表、元组等，唯一的区别是长度必须为5。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunsplit</span><br><span class="line">data=[<span class="string">'http'</span>,<span class="string">'www.baidu.com'</span>,<span class="string">'index.html'</span>,<span class="string">'a=6'</span>,<span class="string">'comment'</span>]</span><br><span class="line">print(urlunsplit(data))</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200416195721124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="urljoin"><a href="#urljoin" class="headerlink" title="urljoin()"></a>urljoin()</h2><p>有了<code>urlunparse()和urlunsplist()方法</code>，我们可以完成链接的合并，不过前提是必须要有特定长度的对象，链接的每一部分都要清晰分开。<br>此外，生成链接还有另一个方法，那就是<code>urljoin()方法</code>。我们可以提供一个<code>base_url（基础链接）</code>作为第一个参数，将新链接作为第二个参数，该方法会分析<code>base_url的scheme、netloc和path这三个内容并对新链接缺失的部分进行补充，最后返回结果。</code><br>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line">print(urljoin(<span class="string">'http://www.baidu.com'</span>,<span class="string">'FAQ.html'</span>))</span><br><span class="line">print(urljoin(<span class="string">'http://www.baidu.com'</span>,<span class="string">'https://hpb1-boke.github.io/FAQ.html'</span>))</span><br><span class="line">print(urljoin(<span class="string">'http://www.baidu.com/about.html'</span>,<span class="string">'https://hpb1-boke.github.io/FAQ.html'</span>))</span><br><span class="line">print(urljoin(<span class="string">'http://www.baidu.com/about.html'</span>,<span class="string">'https://hpb1-boke.github.io/FAQ.html?question=2'</span>))</span><br><span class="line">print(urljoin(<span class="string">'http://www.baidu.com?wd=abc'</span>,<span class="string">'https://hpb1-boke.github.io/index.php'</span>))</span><br><span class="line">print(urljoin(<span class="string">'www.baidu.com/'</span>,<span class="string">'?category=2#comment'</span>))</span><br><span class="line">print(urljoin(<span class="string">'www.baidu.com#comment'</span>,<span class="string">'?category=2'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416200912775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">可以发现，<code>base_url提供了三项内容scheme、netloc和path。如果这3项在新链接里不存在，就予以补充；如果新链接存在，就使用新链接的部分。而base_url中的params、query和fragment是不起作用的。</code><br>通过urljoin()方法，我们可以轻松实现链接解析、拼和与生成。</p>
+<h2 id="urlencode"><a href="#urlencode" class="headerlink" title="urlencode()"></a>urlencode()</h2><p>这里我们再介绍一个常用的方法—<code>urlencode()</code>，它在构造<code>GET</code>请求参数的时候的时候非常有用，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"></span><br><span class="line">params =&#123;</span><br><span class="line">    <span class="string">'name'</span>:<span class="string">'germey'</span>,</span><br><span class="line">    <span class="string">'age'</span>:<span class="number">22</span></span><br><span class="line">&#125;</span><br><span class="line">base_url=<span class="string">'http://www.baidu.com?'</span></span><br><span class="line">url=base_url+urlencode(params)</span><br><span class="line">print(url)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200416202131441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这个方法非常常用。有时为了更加方便地构造参数，我们会事先用字典来表示。要转化为URL的参数时，只要调用该方法即可。</p>
+<h2 id="parse-qs"><a href="#parse-qs" class="headerlink" title="parse_qs()"></a>parse_qs()</h2><p>有了序列化，必然就有反序列化。如果我们有一串GET请求参数，利用<code>parse_qs()方法</code>，就可以将它转回字典，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qs</span><br><span class="line">query=<span class="string">'name=germey&amp;age=22'</span></span><br><span class="line">print(parse_qs(query))</span><br></pre></td></tr></table></figure>
+<p>可以看到，这就就成功转回字典类型了。<br><img src="https://img-blog.csdnimg.cn/20200416202817722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="parse-qsl"><a href="#parse-qsl" class="headerlink" title="parse_qsl()"></a>parse_qsl()</h2><p>另外，还有一个<code>parse_qsl()方法</code>，它用于将参数转化为元组组成的列表，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qsl</span><br><span class="line">query=<span class="string">'name=germey&amp;age=22'</span></span><br><span class="line">print(parse_qsl(query))</span><br></pre></td></tr></table></figure>
+<p>可以看到，运行结果是一个列表，而列表中的每一个元素都是一个元组，元组的第一个内容是参数名，第二个内容是参数值。<br><img src="https://img-blog.csdnimg.cn/20200416203050862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="quote"><a href="#quote" class="headerlink" title="quote()"></a>quote()</h2><p>该方法可以将内容转化为<code>URL</code>编码的格式。<code>URL</code>中带有中文参数时，有时可能会导致乱码的问题，此时用这个方法可以将中文字符转化为<code>URL</code>编码，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</span><br><span class="line">keyword=<span class="string">'壁纸'</span></span><br><span class="line">url=<span class="string">'https://baidu.com/s?wd='</span>+quote(keyword)</span><br><span class="line">print(url)</span><br></pre></td></tr></table></figure>
+<p>这里我们声明了一个中文的搜索文字，然后用quote()方法对其进行URL编码，最后得到的结果如下：<br><img src="https://img-blog.csdnimg.cn/20200416203605471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="unquote"><a href="#unquote" class="headerlink" title="unquote()"></a>unquote()</h2><p>有了<code>quote()</code>方法，当然还有<code>unquote()</code>方法，它可以进行<code>URL</code>解码，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line">url=<span class="string">'https://baidu.com/s?wd=%E5%A3%81%E7%BA%B8'</span></span><br><span class="line">print(unquote(url))</span><br></pre></td></tr></table></figure>
+<p>这是上面得到的URL编码后的结果，这里利用，这里利用unquote()方法还原，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200416204039361.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)可以看到，利用unquote()方法可以方便地实现解码。<br>本节中，我们介绍了parse模块的一些常用URL处理方法。有了这些方法，我们就可以方便地实现URL的解析和构造，建议熟练掌握。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com" rel="external nofollow noreferrer">有点小优秀</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/04/18/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">http://yoursite.com/2020/04/18/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://yoursite.com" target="_blank">有点小优秀</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">基本库的使用</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/04/18/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/fm/12.jpg" class="responsive-img" alt="基本库的使用">
+                        
+                        <span class="card-title">基本库的使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学习爬虫学习爬虫最初的操作就是模拟浏览器向服务器发出请求，python的提供了功能齐全的类库来帮助我们完成这些请求。最基础的HTTP库有urlib、httplib2、requests、treq等。
+3.1使用urlib在python2中，有
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python3-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" class="post-category">
+                                    python3 网络爬虫开发实战
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">基本库的使用</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/18/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%94%BB%E5%87%BB/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/fm/a.jpg" class="responsive-img" alt="社会工程学攻击">
+                        
+                        <span class="card-title">社会工程学攻击</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            0x00 社会工程学简介社会工程学攻击主要利用人们的好奇心、信任、贪婪及一些愚蠢的错误，攻击人们自身的弱点。kali linux提供了一个社会工程学工具集set,可以用来实施社会工程学攻击。
+
+
+0x01 启动社会工程学工具包1命令：  s
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    社会工程学工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%94%BB%E5%87%BB%E8%8E%B7%E5%8F%96%E7%9B%AE%E6%A0%87%E5%B8%90%E5%8F%B7%E5%AF%86%E7%A0%81/">
+                        <span class="chip bg-color">社会工程学攻击获取目标帐号密码</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="1400256289"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://yoursite.com" target="_blank">有点小优秀</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">21.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2097921065@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2097921065" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2097921065" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -491,7 +491,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    684
+                    685
                 </div>
                 
 
@@ -515,7 +515,9 @@
             <div id="articleContent">
                 <h2 id="0x01简介"><a href="#0x01简介" class="headerlink" title="0x01简介"></a>0x01简介</h2><p>empire 是一个针对内网针对域控的一个渗透测试框架，和 msf 类似。生成的木马基于powershell，能够具有一定的免杀效果。</p>
 <p>empire 包含三个部分，一个是 modules 即自身的一些模块，一个是 listernes 即监听类似 msf 的 exploit/multi/handler 模块，一个是 agents 即已经链接上的会话类似 msf 存的 session。</p>
-<h2 id="0x02-安装"><a href="#0x02-安装" class="headerlink" title="0x02 安装"></a>0x02 安装</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/EmpireProject/Empire.git</span></span><br><span class="line">cd /Empire/setup/</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="0x02-安装"><a href="#0x02-安装" class="headerlink" title="0x02 安装"></a>0x02 安装</h2><pre class=" language-cpp"><code class="language-cpp">git clone https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>EmpireProject<span class="token operator">/</span>Empire<span class="token punctuation">.</span>git
+cd <span class="token operator">/</span>Empire<span class="token operator">/</span>setup<span class="token operator">/</span>
+<span class="token punctuation">.</span><span class="token operator">/</span>install<span class="token punctuation">.</span>sh</code></pre>
 <p>进入empire目录，执行empire就可以启动了：./empire</p>
 <p>启动测试：<br><img src="https://img-blog.csdnimg.cn/20200408205727966.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="0x03-简单使用"><a href="#0x03-简单使用" class="headerlink" title="0x03 简单使用"></a>0x03 简单使用</h2><p>首先创建一个监听端口，然后把木马文件运行在目标主机。并且会反弹回来一个shell。这样我们就可以执行命令了。</p>
@@ -1050,7 +1052,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.2k</span>&nbsp;字
+                class="white-color">20.6k</span>&nbsp;字
             
             
             

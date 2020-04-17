@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -491,7 +491,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    555
+                    554
                 </div>
                 
 
@@ -516,7 +516,7 @@
                 <h2 id="0x00-社会工程学简介"><a href="#0x00-社会工程学简介" class="headerlink" title="0x00 社会工程学简介"></a>0x00 社会工程学简介</h2><p>社会工程学攻击主要利用人们的好奇心、信任、贪婪及一些愚蠢的错误，攻击人们自身的弱点。kali linux提供了一个社会工程学工具集set,可以用来实施社会工程学攻击。</p>
 <a id="more"></a>
 
-<h2 id="0x01-启动社会工程学工具包"><a href="#0x01-启动社会工程学工具包" class="headerlink" title="0x01 启动社会工程学工具包"></a>0x01 启动社会工程学工具包</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：  setoolkit</span><br></pre></td></tr></table></figure>
+<h2 id="0x01-启动社会工程学工具包"><a href="#0x01-启动社会工程学工具包" class="headerlink" title="0x01 启动社会工程学工具包"></a>0x01 启动社会工程学工具包</h2><pre class=" language-php"><code class="language-php">命令：  setoolkit</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200410210201446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>输出的信息详细介绍了SET，该信息在第一次运行会显示。此时输入y，将显示如下信息，这里显示了社会工程学攻击的菜单，这时候选择工程学攻击类型，就可以实施攻击了。<br><img src="https://img-blog.csdnimg.cn/20200410210824984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="0x02-Web攻击向量"><a href="#0x02-Web攻击向量" class="headerlink" title="0x02 Web攻击向量"></a>0x02 Web攻击向量</h2><p>Web攻击向量会特意构造出一些对目标而言是可信且具有诱惑力的网页。当目标用户<br>访问该网页后，即可窃取目标用户的信息。社会工程学攻击工具包可以克隆出和实际运行<br>的可信站点外观完全一样的网页，这使得受害者认为他们正在浏览一个合法站点。</p>
 <h2 id="具体操作步骤："><a href="#具体操作步骤：" class="headerlink" title="具体操作步骤："></a>具体操作步骤：</h2><p>首先启动工具并选择社会工程学攻击,执行命令如下：<br><img src="https://img-blog.csdnimg.cn/20200410211520502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200410211943808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时用户就可以选择对应的攻击类型，然后实施攻击。选择web攻击向量，所以选择2<br><img src="https://img-blog.csdnimg.cn/20200410212221690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">选择证书获取攻击方法，这里选择3<br><img src="https://img-blog.csdnimg.cn/20200410212327349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200410212537589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">以上输出显示了创建web站点的方式，我们可以根据自己的需要进行选择，这里为了方便，选择web模板，输入编号1，并且指定用户提交信息的ip地址，即攻击机kali的地址。<br><img src="https://img-blog.csdnimg.cn/20200410212916818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">以下信息提供了几个模板，这里选择google站点模板，选择编号2，</p>
@@ -1045,7 +1045,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.2k</span>&nbsp;字
+                class="white-color">20.6k</span>&nbsp;字
             
             
             

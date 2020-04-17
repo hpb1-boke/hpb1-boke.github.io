@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -517,11 +517,23 @@
 <p>在渗透测试时信息收集是我们的第一步，信息收集的全面性对于后期的渗透工作必为重要，甚至关联到能不能挖掘到漏洞<br><img src="https://img-blog.csdnimg.cn/20200402183814914.png" alt="在这里插入图片描述"></p>
 <h2 id="0x01-信息收集收集什么？举个栗子"><a href="#0x01-信息收集收集什么？举个栗子" class="headerlink" title="0x01 信息收集收集什么？举个栗子"></a>0x01 信息收集收集什么？举个栗子</h2><p><img src="https://img-blog.csdnimg.cn/20200402184426462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="0x02-信息收集收集什么？"><a href="#0x02-信息收集收集什么？" class="headerlink" title="0x02 信息收集收集什么？"></a>0x02 信息收集收集什么？</h2><p><img src="https://img-blog.csdnimg.cn/20200402184035656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><strong><strong>总结：</strong></strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>目标人物</span><br><span class="line">  电话，邮箱，密码，幸运数字</span><br><span class="line"><span class="number">2.</span>目标环境	</span><br><span class="line">  宿舍 教室 </span><br><span class="line"><span class="number">3.</span>目标事件</span><br><span class="line"> 周末常去XXXX地方玩</span><br><span class="line"> 喜欢周末去喝奶茶。</span><br><span class="line"></span><br><span class="line">总之就是收集一切对我们有用的信息</span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标人物
+  电话，邮箱，密码，幸运数字
+<span class="token number">2</span><span class="token punctuation">.</span>目标环境    
+  宿舍 教室 
+<span class="token number">3</span><span class="token punctuation">.</span>目标事件
+ 周末常去<span class="token constant">XXXX</span>地方玩
+ 喜欢周末去喝奶茶。
 
+总之就是收集一切对我们有用的信息</code></pre>
 <h2 id="0x03-通过信息收集能干嘛？"><a href="#0x03-通过信息收集能干嘛？" class="headerlink" title="0x03 通过信息收集能干嘛？"></a>0x03 通过信息收集能干嘛？</h2><p>当然是加以利用，因为渗透测试的灵魂就是信息收集。</p>
 <p>在实战中，我们要对某某站点进行渗透，那么就要先信息收集。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>目标站点</span><br><span class="line">管理员电话，邮箱，密码</span><br><span class="line"><span class="number">2.</span>目标环境</span><br><span class="line">域名，脚本语言，数据库，中间件，框架，cms，开放端口。</span><br><span class="line"><span class="number">3.</span>目标事件</span><br><span class="line">历史漏洞，使用手册，使用说明，通知，公众号。</span><br></pre></td></tr></table></figure>
+<pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标站点
+管理员电话，邮箱，密码
+<span class="token number">2</span><span class="token punctuation">.</span>目标环境
+域名，脚本语言，数据库，中间件，框架，cms，开放端口。
+<span class="token number">3</span><span class="token punctuation">.</span>目标事件
+历史漏洞，使用手册，使用说明，通知，公众号。</code></pre>
 <p><strong>例子1：<br>如果我们通过信息收集知道了某站点是个cms，并且存在漏洞，那么我们就可以进行通杀漏洞的直接攻击</strong></p>
 <p><strong>例子2：<br>有些危险端口开放了我们就可以尝试入侵，例如 445|3306|22|1433|6379 可以尝试爆破或者是使用某些端口存在漏洞的服务。而且有可能一台服务器上面不同端口代表着不同的Web网站</strong></p>
 <h2 id="0x04-信息收集报告编写"><a href="#0x04-信息收集报告编写" class="headerlink" title="0x04 信息收集报告编写"></a>0x04 信息收集报告编写</h2><p><img src="https://img-blog.csdnimg.cn/20200402193151206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -821,7 +833,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            0×00概述1234567891011Gopher 协议可以做很多事情，特别是在 SSRF 中可以发挥很多重要的作用。利用此协议可以攻击内网的 FTP、Telnet、Redis、Memcache，也可以进行 GET、POST 请求。这无疑极
+                            0×00概述Gopher 协议可以做很多事情，特别是在 SSRF 中可以发挥很多重要的作用。利用此协议可以攻击内网的 FTP、Telnet、Redis、Memcache，也可以进行 GET、POST 请求。这无疑极大拓宽了 SSRF 的攻击
                         
                     </div>
                     <div class="publish-info">
@@ -1045,7 +1057,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.2k</span>&nbsp;字
+                class="white-color">20.6k</span>&nbsp;字
             
             
             

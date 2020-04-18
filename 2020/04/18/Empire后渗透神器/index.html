@@ -744,6 +744,33 @@ cd <span class="token operator">/</span>Empire<span class="token operator">/</sp
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '80fb6931c777946d1626',
+        clientSecret: 'fb995fa1ab5f13ba70001f91a4d936db394dc112',
+        repo: 'hpb1-boke.github.io/',
+        owner: 'hpb1-boke',
+        admin: "hpb1-boke",
+        id: '2020-04-18T02-22-44',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 

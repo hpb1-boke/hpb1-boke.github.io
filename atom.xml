@@ -71,11 +71,11 @@
   </entry>
   
   <entry>
-    <title>实战挖掘access偏移注入</title>
-    <link href="http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E5%81%8F%E7%A7%BB%E6%B3%A8%E5%85%A5/"/>
-    <id>http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E5%81%8F%E7%A7%BB%E6%B3%A8%E5%85%A5/</id>
+    <title>实战挖掘access数据库cookie注入</title>
+    <link href="http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E6%95%B0%E6%8D%AE%E5%BA%93cookie%E6%B3%A8%E5%85%A5/"/>
+    <id>http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E6%95%B0%E6%8D%AE%E5%BA%93cookie%E6%B3%A8%E5%85%A5/</id>
     <published>2020-04-25T06:25:00.000Z</published>
-    <updated>2020-04-30T08:31:52.296Z</updated>
+    <updated>2020-04-30T08:32:01.597Z</updated>
     
     <summary type="html">
     
@@ -98,11 +98,11 @@
   </entry>
   
   <entry>
-    <title>实战挖掘access数据库cookie注入</title>
-    <link href="http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E6%95%B0%E6%8D%AE%E5%BA%93cookie%E6%B3%A8%E5%85%A5/"/>
-    <id>http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E6%95%B0%E6%8D%AE%E5%BA%93cookie%E6%B3%A8%E5%85%A5/</id>
+    <title>实战挖掘access偏移注入</title>
+    <link href="http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E5%81%8F%E7%A7%BB%E6%B3%A8%E5%85%A5/"/>
+    <id>http://yoursite.com/2020/04/25/%E5%AE%9E%E6%88%98%E6%8C%96%E6%8E%98access%E5%81%8F%E7%A7%BB%E6%B3%A8%E5%85%A5/</id>
     <published>2020-04-25T06:25:00.000Z</published>
-    <updated>2020-04-30T08:32:01.597Z</updated>
+    <updated>2020-04-30T08:31:52.296Z</updated>
     
     <summary type="html">
     
@@ -526,11 +526,11 @@
   </entry>
   
   <entry>
-    <title>SQL注入实战(防注入)-Access</title>
-    <link href="http://yoursite.com/2019/10/03/SQL%E6%B3%A8%E5%85%A5%E5%AE%9E%E6%88%98(%E9%98%B2%E6%B3%A8%E5%85%A5)-Access/"/>
-    <id>http://yoursite.com/2019/10/03/SQL%E6%B3%A8%E5%85%A5%E5%AE%9E%E6%88%98(%E9%98%B2%E6%B3%A8%E5%85%A5)-Access/</id>
+    <title>Sql注入之Postgresql</title>
+    <link href="http://yoursite.com/2019/10/03/Sql%E6%B3%A8%E5%85%A5%E4%B9%8BPostgresql/"/>
+    <id>http://yoursite.com/2019/10/03/Sql%E6%B3%A8%E5%85%A5%E4%B9%8BPostgresql/</id>
     <published>2019-10-03T06:25:00.000Z</published>
-    <updated>2020-04-30T08:29:48.221Z</updated>
+    <updated>2020-04-30T08:29:57.616Z</updated>
     
     <summary type="html">
     
